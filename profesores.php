@@ -142,22 +142,12 @@ $registro = $servidor->query("SELECT * FROM profesor");
 
 
 
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Nuevo Profesor</h5>
-                <button
-                type="button"
-                class="btn-close"
-                data-mdb-dismiss="modal"
-                aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div class="modal-body">
 
@@ -187,19 +177,17 @@ $registro = $servidor->query("SELECT * FROM profesor");
         <div class="row mb-4">
             <div class="col">
             <div class="form-outline">
-                <input type="text"  class="form-control" name="telefono" id="telefono" value="" required/>
+                <input type="number"  class="form-control" name="telefono" id="telefono" value="" required/>
                 <label class="form-label" for="form3Example1">Telefono</label>
             </div>
             </div>
             <div class="col">
             <div class="form-outline">
-                <input type="text"  class="form-control" name="dni" id="dni" value="" required/>
+                <input type="number"  class="form-control" name="dni" id="dni" value="" required/>
                 <label class="form-label" for="form3Example2">Dni</label>
             </div>
             </div>
         </div>
-
-        
 
         <!-- Submit button -->
         <button href="#"  id="upd-pin"  class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
@@ -211,6 +199,10 @@ $registro = $servidor->query("SELECT * FROM profesor");
             </div>
         </div>
 </div>
+
+
+
+
 
     <!-- Header -->
     <div class="header  pb-6" >
@@ -228,9 +220,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a  type="button"
-        data-mdb-toggle="modal"
-        data-mdb-target="#exampleModal" class="btn btn-sm btn-neutral">Nuevo + </a>
+              <a  type="button" data-mdb-toggle="modal"  data-mdb-target="#exampleModal" class="btn btn-sm btn-neutral">Nuevo + </a>
               <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
             </div>
           </div>
@@ -253,10 +243,13 @@ $registro = $servidor->query("SELECT * FROM profesor");
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-dark text-white rounded-circle shadow">
-                      <i class="fas fa-pen"></i>
+                      
+                      <a href="" style="color: white;" data-mdb-toggle="modal"  data-mdb-target="#edit_modal<?php echo $show['id_pro']?>" ><i class="fas fa-pen"></i></a>
                       </div>
                       <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                      <i class="fas fa-trash-alt"></i>
+                     
+                      <a href="" style="color: white;"  data-mdb-toggle="modal"  data-mdb-target="#eliminar_modal<?php echo $show['id_pro']?>" > <i class="fas fa-trash-alt"></i></a>
+            
                       </div>
                       
                     </div>
@@ -272,13 +265,13 @@ $registro = $servidor->query("SELECT * FROM profesor");
                     <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
                   <strong> <i class="fas fa-user-friends"></i> 
                    <a class="h4 text-dark" href="alumnos.php?id_pro=<?php echo $show['id_pro']; ?>" >Ver alumnos</a></strong> 
-                    
+      
                   </p>
                 </div>
               </div>
             </div>
-            
-            
+            <?php include('ModalEditar.php')?>
+            <?php include('ModalEliminar.php')?>
       <?php }?>
           </div>
         </div>
@@ -317,7 +310,10 @@ $registro = $servidor->query("SELECT * FROM profesor");
   <script type="text/javascript">
       </script>
         <script type="text/javascript" src="js/mdb.min.js"></script>
+      
+
   <script>
+  
           $('#upd-pin').on('click', function() {
   
           nombres = $('#nombres').val();

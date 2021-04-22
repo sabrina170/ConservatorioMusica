@@ -4,9 +4,21 @@ require_once('conexion.php');
 session_start();
 $usuario = $_SESSION['user_id'];
 $tipo_usuario = $_SESSION['tipo_user'];
+$user_name = $_SESSION['user_name'];
+$usuario = $_SESSION['usuario'];
+$contraseña = $_SESSION['contraseña'];
 $hoy = date("Y-m-d");
 
-$registro = $servidor->query("SELECT * FROM profesor");
+$registro = $servidor->query("SELECT COUNT(*) total FROM adminuser;");
+$usuarios = $registro->fetch_assoc();
+$registro2 = $servidor->query("SELECT COUNT(*) total FROM profesor;");
+$profesores = $registro2->fetch_assoc();
+$registro3 = $servidor->query("SELECT COUNT(*) total FROM alumno;");
+$alumnos = $registro3->fetch_assoc();
+
+
+$lista = $servidor->query("SELECT * FROM adminuser;");
+
 
 ?>
 <!DOCTYPE html>
@@ -88,8 +100,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
     </div>
 </nav>
 
-  <!-- Main content -->
-<div class="main-content" id="panel"  >
+<div class="main-content" id="panel">
     <!-- Topnav -->
     <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom" style="background-color: #224a73;">
       <div class="container-fluid">
@@ -136,156 +147,188 @@ $registro = $servidor->query("SELECT * FROM profesor");
       </div>
     </nav>
     <!-- Header -->
-
-
-    
-<!-- Modal -->
-
-
-
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Profesor</h5>
-                <button
-                type="button"
-                class="btn-close"
-                data-mdb-dismiss="modal"
-                aria-label="Close"
-                ></button>
-            </div>
-            <div class="modal-body">
-
-    <form method="get">
-        <!-- 2 column grid layout with text inputs for the first and last names -->
-        <div class="row mb-4">
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="nombres" id="nombres" value="" required />
-                <label class="form-label" for="form3Example1">Nombres</label>
-            </div>
-            </div>
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="apellidos" id="apellidos" value="" required/>
-                <label class="form-label" for="form3Example2">Apellidos</label>
-            </div>
-            </div>
-        </div>
-
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-            <input type="email"  class="form-control" name="especialidad" id="especialidad" value="" required/>
-            <label class="form-label" for="form3Example3">Especialidad</label>
-        </div>
-
-        <div class="row mb-4">
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="telefono" id="telefono" value="" required/>
-                <label class="form-label" for="form3Example1">Telefono</label>
-            </div>
-            </div>
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="dni" id="dni" value="" required/>
-                <label class="form-label" for="form3Example2">Dni</label>
-            </div>
-            </div>
-        </div>
-
-        
-
-        <!-- Submit button -->
-        <button href="#"  id="upd-pin"  class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
-
-        </form>
-            
-            </div>
-            
-            </div>
-        </div>
-</div>
-
     <!-- Header -->
-    <div class="header  pb-6" >
-      <div class="container-fluid">
-        <div class="header-body">
-          <div class="row align-items-center py-4">
-            <div class="col-lg-6 col-7">
-              <h6 class="h1  d-inline-block mb-0" style="color: #224a73;">USUARIOS</h6>
-              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                <!-- <ol class="breadcrumb breadcrumb-links breadcrumb-dark"> 
-                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> </a></li> 
-                   <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Default</li>
-                </ol>  -->
-              </nav>
+    <div class="header pb-6 d-flex align-items-center" >
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-8"></span>
+      <!-- Header container -->
+      
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2">
+          <div class="card card-profile">
+         <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                
+              </div>
             </div>
-            <div class="col-lg-6 col-5 text-right">
-              <a  type="button"
-        data-mdb-toggle="modal"
-        data-mdb-target="#exampleModal" class="btn btn-sm btn-neutral">Nuevo + </a>
-              <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-sm btn-info  mr-4 ">Datos Personales</a>
+                <a href="#" class="btn btn-sm btn-default float-right">Administrador</a>
+              </div>
             </div>
-          </div>
-          <!-- Card stats -->
-          <div class="row">
-          <?php $posicion=1; foreach ($registro as $show){
-              ?>
-
-            <div class="col-xl-3 col-md-6">
-
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><?php echo $show['especialidad']?></h5>
-                      <span class="h2 font-weight-bold mb-0"><?php echo $show['nombres']?></span>
-                      <span class="h2 font-weight-bold mb-0"><?php echo $show['apellidos']?></span>
-                      
+            <div class="card-body pt-0">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center">
+                    <div>
+                      <span class="heading"><?php echo $usuarios['total'] ;?></span>
+                      <span class="description">Usuarios</span>
                     </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-dark text-white rounded-circle shadow">
-                      <i class="fas fa-pen"></i>
-                      </div>
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                      <i class="fas fa-trash-alt"></i>
-                      </div>
-                      
+                    <div>
+                      <span class="heading"><?php echo $profesores['total'] ;?></span>
+                      <span class="description">Profesores</span>
+                    </div>
+                    <div>
+                      <span class="heading"><?php echo $alumnos['total'] ;?></span>
+                      <span class="description">Alumnos</span>
                     </div>
                   </div>
-                  <span class="h5 text-nowrap"><i class="fas fa-phone-volume"></i> <?php echo $show['telefono']?></span>
-                  <br>
-                  
-                  <span class="h5 text-nowrap"><i class="fas fa-user-shield"></i> <?php echo $show['dni']?></span>
-
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> <?php echo $show['id_pro']?></span>
-                   
-                    <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
-                  <strong> <i class="fas fa-user-friends"></i> 
-                   <a class="h4 text-dark" href="alumnos.php?id_pro=<?php echo $show['id_pro']; ?>" >Ver alumnos</a></strong> 
-                    
-                  </p>
+                </div>
+              </div>
+              <div class="text-center">
+                <h5 class="h3">
+                  <?php echo $user_name ; ?>
+                </h5>
+                <div class="h5 font-weight-300">
+                  <i class="ni location_pin mr-2"></i>Lima, Perú
+                </div>
+                <div class="h5 mt-4">
+                  <i class="ni business_briefcase-24 mr-2"></i>Usuario :  <?php echo $usuario?>
+                </div>
+                <div class="h5 mt-4">
+                  <i class="ni business_briefcase-24 mr-2"></i>Contraseña : <?php echo $contraseña ?>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Crear nuevo usuario</h3>
+                </div>
+                
+              </div>
+            </div>
+            <div class="card-body">
+              <form method="get">
+                <h6 class="heading-small text-muted mb-4">Informacion Usuario</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Usuario</label>
+                        <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" >
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Contraseña</label>
+                        <input type="text" id="clave" name="clave" class="form-control" placeholder="Contraseña">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-first-name">Nombres</label>
+                        <input type="text" id="nombres" name="nombres" class="form-control" placeholder="Nombres" >
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-last-name">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="tipo" id="tipo" value="1">
+                <button href="#"  id="upd-pin"  class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <!-- Card header -->
+            <div class="card-header border-0">
+              <h3 class="mb-0">Light table</h3>
+            </div>
+            <!-- Light table -->
+            <div class="table-responsive">
+              <table  id="usuarios" class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" class="sort" data-sort="name">Nr0</th>
+                    <th scope="col" class="sort" data-sort="budget">Nombres</th>
+                    <th scope="col" class="sort" data-sort="status">Apellidos</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col" class="sort" data-sort="completion">Constraseña</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                <?php $posicion=1; foreach ($lista as $show){
+              ?> 
+                  <tr>
+                    <th scope="row">
+                    <?php echo $posicion; $posicion++?>
+                    </th>
+                    <td class="budget">
+                    <?php echo $show['nombres']?>
+                    </td>
+                    <td class="budget">
+                    <?php echo $show['apellidos']?>
+                    </td>
+                    <td class="budget">
+                    <?php echo $show['usuario']?>
+                    </td>
+                    <td class="budget">
+                    <?php echo $show['clave']?>
+                    </td>
+    
+                    <td class="budget">
+                    <i class="fas fa-edit"></i>
+                    <i class="fas fa-trash-alt"></i>
+                    </td>
+                    
+                  </tr>
+                  <?php }?>
+                </tbody>
+              </table>
+            </div>
             
-            
-      <?php }?>
           </div>
         </div>
       </div>
+
+
+      <!-- Footer -->
+      <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6">
+            <div class="copyright text-center  text-lg-left  text-muted">
+              &copy; 2021 <a class="font-weight-bold ml-1" target="_blank">Convervatorio de música de Lima</a>
+            </div>
+          </div>
+          
+        </div>
+      </footer>
     </div>
- 
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
@@ -323,33 +366,33 @@ $registro = $servidor->query("SELECT * FROM profesor");
   
           nombres = $('#nombres').val();
           apellidos = $('#apellidos').val();
-          especialidad = $('#especialidad').val();
-          telefono = $('#telefono').val();
-          dni = $('#dni').val();
+          usuario = $('#usuario').val();
+          clave = $('#clave').val();
+          tipo = $('#tipo').val();
   
-          console.log(especialidad);
+          console.log(nombres);
   
           $.ajax({
               method: 'POST',
               url: 'acciones.php',
               data: {
-              accion: "RegistrarProfesor",
+              accion: "RegistrarUsuario",
               nombres: nombres,
               apellidos: apellidos,
-              especialidad:especialidad,
-              telefono: telefono,
-              dni:dni
+              usuario:usuario,
+              clave: clave,
+              tipo:tipo
               },
               success: function(data) {
               console.log(data);
               if (data == 1) {
                   Swal.fire({
                   type: 'success',
-                  title: 'Profesor Registrado',
+                  title: 'Usuario Registrado',
                   timer: 1200,
                   showConfirmButton: false
                   }).then(function() {
-                      location.href ="profesores.php";
+                      location.href ="usuarios.php";
                   });
               } else {
                   Swal.fire({
@@ -376,22 +419,23 @@ $registro = $servidor->query("SELECT * FROM profesor");
             "lengthChange": true,
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todo"]],
             dom: 'Blfrtip',
-        buttons: [{
-            extend: 'excelHtml5',
-            exportOptions: {
+        buttons: [
+        //     {
+        //     extend: 'excelHtml5',
+        //     exportOptions: {
   
-            }
-          },
-          {
-            extend: 'pdfHtml5',
-            orientation: 'landscape',
-            pageSize: 'LEGAL',
-            exportOptions: {
+        //     }
+        //   },
+        //   {
+        //     extend: 'pdfHtml5',
+        //     orientation: 'landscape',
+        //     pageSize: 'LEGAL',
+        //     exportOptions: {
   
-            }
-          },
+        //     }
+        //   },
           
-          'print',
+        //   'print',
        
         ],
         exportOptions: {

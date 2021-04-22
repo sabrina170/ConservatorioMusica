@@ -22,12 +22,74 @@ switch ($accion) {
         `apellidos`, `especialidad`, `telefono`, `dni`) 
         VALUES (NULL, '$nombres', '$apellidos', '$especialidad', '$telefono', '$dni');");
 
-        if (!$accion) {
-            echo $cn->error;
+        if (!$respuesta) {
+            echo $servidor->error;
         } else {
             echo 1;
         }
-        break;
+    break;
+    
+    case  'RegistrarUsuario':
+       require_once('conexion.php');
+    
+            $nombres = $_POST['nombres'];
+            $apellidos = $_POST['apellidos'];
+            $usuario = $_POST['usuario'];
+            $clave = $_POST['clave'];
+            $tipo = $_POST['tipo'];
+    
+            $respuesta = $servidor->query("INSERT INTO `adminuser` (`id`, `nombres`, 
+            `apellidos`, `usuario`, `clave`, `tipo`) 
+            VALUES (NULL, '$nombres', '$apellidos', '$usuario', '$clave', '$tipo');");
+    
+            if (!$respuesta) {
+                echo $servidor->error;
+            } else {
+                echo 1;
+            }
+    break;
+
+    case  'ActualizarProfesor':
+
+        require_once('conexion.php');
+    
+        $nombres2 = $_POST['nombres2'];
+        $apellidos2 = $_POST['apellidos2'];
+        $especialidad2 = $_POST['especialidad2'];
+        $telefono2 = $_POST['telefono2'];
+        $dni2 = $_POST['dni2'];
+        $id_pro2 = $_POST['id_pro2'];
+    
+            $respuesta = $servidor->query("UPDATE `profesor` 
+            SET `nombres` = '$nombres2', 
+            `apellidos` = '$apellidos2', 
+            `especialidad` = '$especialidad2', 
+            `telefono` = '$telefono2', 
+            `dni` = '$dni2'
+             WHERE `profesor`.`id_pro` = '$id_pro2';");
+    
+        if (!$accion) {
+                echo $cn->error;
+        } else {
+                echo 1;
+            }
+
+    break;     
+    
+    case 'EliminarProfesor':
+        require_once('conexion.php');
+
+        $id_pro2 = $_POST['id_pro2'];
+        $respuesta = $servidor->query("DELETE FROM `profesor` 
+             WHERE `profesor`.`id_pro` = '$id_pro2';");
+    
+        if (!$respuesta) {
+                echo $servidor->error;
+        } else {
+                echo 1;
+            }
+    
+    break;
 
     case  'RegistrarAlumno':
         
@@ -186,3 +248,5 @@ switch ($accion) {
 
 
 }
+
+?>
