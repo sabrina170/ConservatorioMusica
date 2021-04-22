@@ -41,7 +41,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
 
 <body>
   <!-- Sidenav -->
-<nav class="sidenav navbar navbar-vertical 
+  <nav class="sidenav navbar navbar-vertical 
    fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main"
    style="
       background: linear-gradient(
@@ -66,15 +66,16 @@ $registro = $servidor->query("SELECT * FROM profesor");
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="profesores.php">
-              <i class="fas fa-chalkboard-teacher text-dark"></i>
-                <span class="nav-link-text">Profesores</span>
+              <a class="nav-link " href="profesores.php">
+                <i class="fas fa-chalkboard-teacher" style="color: white;"></i>
+                <span class="nav-link-text" style="color: white;
+               font-size: 15px; ">Profesores</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="usuarios.php">
-              <i class="fas fa-users" style="color: white;"></i>
-                <span class=" nav-link-text " style="color: white;">Usuarios</span>
+              <a class="nav-link active" href="usuarios.php">
+              <i class="fas fa-users text-dark" ></i>
+                <span class=" nav-link-text "  style="font-size: 15px;">Usuarios</span>
               </a>
             </li>
             
@@ -218,7 +219,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h1  d-inline-block mb-0" style="color: #224a73;">PROFESORES</h6>
+              <h6 class="h1  d-inline-block mb-0" style="color: #224a73;">USUARIOS</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <!-- <ol class="breadcrumb breadcrumb-links breadcrumb-dark"> 
                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> </a></li> 
