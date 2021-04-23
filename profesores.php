@@ -71,8 +71,11 @@ $registro = $servidor->query("SELECT * FROM profesor");
                 <span class=" nav-link-text " style="color: white;">Usuarios</span>
               </a>
             </li>
-
+            <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
+              Salir
+            </a>
           </ul>
+
           <!-- Divider -->
           <hr class="my-3">
 
@@ -119,8 +122,8 @@ $registro = $servidor->query("SELECT * FROM profesor");
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="cerrar_sesion.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-sign-in-alt"></i> Salir
+              <a class="nav-link" href="cerrar_sesion.php">
+                Salir
               </a>
             </li>
           </ul>
