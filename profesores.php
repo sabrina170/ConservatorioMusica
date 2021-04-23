@@ -35,26 +35,38 @@ $registro = $servidor->query("SELECT * FROM profesor");
   <!-- Argon CSS -->
   <link rel="stylesheet" href="assets/css/argon.css?v=1.2.0" type="text/css">
 </head>
+<style>
 
+</style>
 <body>
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical 
-   fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main" style="
-      background: linear-gradient(
-        50deg,
-        rgba(34, 74, 115, 0.6),
-        rgba(34, 74, 115, 1) 
-      );">
+      fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main" style="
+          background-image: linear-gradient(rgba(34, 74, 115, 0.8),
+          rgba(34, 74, 115, 0.8) ), url(img/dd.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;">
 
     <div class="scrollbar-inner">
       <!-- Brand -->
-      <div class="sidenav-header  align-items-center">
-
-
+      <div class="sidenav-header ">
+        <br><br>
+      <ul class="navbar-nav align-items-center  ml-md-auto ">
+      <li class="nav-item d-xl-none">
+              <!-- Sidenav toggler -->
+              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                <div class="sidenav-toggler-inner">
+                  <i class="fas fa-times-circle fa-2x text-white"></i>
+                </div>
+              </div>
+            </li>
+      </ul>
       </div>
-
+        <br>
       <div class="navbar-inner">
-        <img src="img/violinista.png" class="img-fluid rounded-pill" alt="" />
+      
+        <img src="img/logo2.jpg" class="img-fluid rounded-pill" alt="" />
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
@@ -72,7 +84,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
               </a>
             </li>
             <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
-              Salir
+            <i class="fas fa-sign-out-alt"></i>  Salir
             </a>
           </ul>
 
@@ -87,7 +99,13 @@ $registro = $servidor->query("SELECT * FROM profesor");
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom" style="background-color: #224a73;">
+    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom"  style="
+            background-image: linear-gradient(rgba(34, 74, 115, 0.8),
+            rgba(34, 74, 115, 0.8) ), url(img/fondo2.jpg);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
@@ -122,8 +140,8 @@ $registro = $servidor->query("SELECT * FROM profesor");
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="cerrar_sesion.php">
-                Salir
+              <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
+              <i class="fas fa-sign-out-alt"></i>  Salir
               </a>
             </li>
           </ul>
@@ -147,28 +165,47 @@ $registro = $servidor->query("SELECT * FROM profesor");
             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-
+        
             <form method="get">
+            <div class="text-center">
+            <span class="badge rounded-pill text-center" style="background-color: #fed6dd;color:#af152e;" id="cont1"></span>
+            </div>
+            <br>
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
+              
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" class="form-control" name="nombres" id="nombres" value="" required />
+                    <input type="text" class="form-control" name="nombres" id="nombres" value="" required/>
                     <label class="form-label" for="form3Example1">Nombres</label>
+                    
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
                     <input type="text" class="form-control" name="apellidos" id="apellidos" value="" required />
                     <label class="form-label" for="form3Example2">Apellidos</label>
+                    
                   </div>
                 </div>
               </div>
 
               <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="email" class="form-control" name="especialidad" id="especialidad" value="" required />
-                <label class="form-label" for="form3Example3">Especialidad</label>
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" class="form-control" name="especialidad" id="especialidad" value="" required />
+                    <label class="form-label" for="form3Example1">Especialidad</label>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="number" class="form-control" name="horas" id="horas" value="" required />
+                    <label class="form-label" for="form3Example2">Horas trabajadas</label>
+                    
+                  </div>
+                </div>
               </div>
 
               <div class="row mb-4">
@@ -176,18 +213,20 @@ $registro = $servidor->query("SELECT * FROM profesor");
                   <div class="form-outline">
                     <input type="number" class="form-control" name="telefono" id="telefono" value="" required />
                     <label class="form-label" for="form3Example1">Telefono</label>
+                    
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input type="number" class="form-control" name="dni" id="dni" value="" required />
+                    <input type="number" class="form-control" name="dni" id="dni" value="" maxlength="8" required />
                     <label class="form-label" for="form3Example2">Dni</label>
+                    
                   </div>
                 </div>
               </div>
 
               <!-- Submit button -->
-              <button href="#" id="upd-pin" class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
+              <button href="#" id="upd-pin" class="btn btn-block mb-4" type="submit" style="background-color: #3578ba; color: white;">Agregar</button>
 
             </form>
 
@@ -208,6 +247,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
               <h6 class="h1  d-inline-block mb-0" style="color: #224a73;">PROFESORES</h6>
+              
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <!-- <ol class="breadcrumb breadcrumb-links breadcrumb-dark"> 
                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> </a></li> 
@@ -256,9 +296,19 @@ $registro = $servidor->query("SELECT * FROM profesor");
                     <br>
 
                     <span class="h5 text-nowrap"><i class="fas fa-user-shield"></i> <?php echo $show['dni'] ?></span>
+                    <br>
+                    <span class="h5 text-nowrap"><i class="far fa-clock"></i> <?php echo $show['horas'] ?>  hrs.</span>
 
                     <p class="mt-3 mb-0 text-sm">
-                      <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> <?php echo $show['id_pro'] ?></span>
+                      
+                      
+                      <?php
+                      $pro =  $show['id_pro'];
+                      $registro3 = $servidor->query("SELECT COUNT(*) total FROM alumno where profesor = '$pro';");
+                      $alumnos = $registro3->fetch_assoc();
+                        
+                        ?>
+                      <span class="text-success mr-2 "><i class="fa fa-arrow-up fs-2x"></i> <strong><?php echo $alumnos['total'] ;?></strong></span>
 
                       <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
                       <strong> <i class="fas fa-user-friends"></i>
@@ -268,8 +318,8 @@ $registro = $servidor->query("SELECT * FROM profesor");
                   </div>
                 </div>
               </div>
-              <?php include('ModalEditar.php') ?>
-              <?php include('ModalEliminar.php') ?>
+              <?php include('modals/ModalEditar.php') ?>
+              <?php include('modals/ModalEliminar.php') ?>
             <?php } ?>
           </div>
         </div>
@@ -316,12 +366,38 @@ $registro = $servidor->query("SELECT * FROM profesor");
       nombres = $('#nombres').val();
       apellidos = $('#apellidos').val();
       especialidad = $('#especialidad').val();
+      horas = $('#horas').val();
       telefono = $('#telefono').val();
       dni = $('#dni').val();
 
-      console.log(especialidad);
+      if(nombres == '' ){
+        document.getElementById('cont1').innerHTML='Falta nombres ';
+        return false;
+      }
+      if(apellidos == ''  ){
+        document.getElementById('cont1').innerHTML='Falta apellidos';
+        return false;
+      }
+      
+      if(especialidad == '' ){
+        document.getElementById('cont1').innerHTML='Falta especialidad';
+        return false;
+      }
+      if(horas == '' ){
+        document.getElementById('cont1').innerHTML='Falta horas';
+        return false;
+      }
+      if(telefono == '' ){
+        document.getElementById('cont1').innerHTML='Falta telefono';
+        return false;
+      }
+      if(dni == '' ){
+        document.getElementById('cont1').innerHTML='Falta dni';
+        return false;
+      }
 
-      $.ajax({
+      else{
+  $.ajax({
         method: 'POST',
         url: 'acciones.php',
         data: {
@@ -329,6 +405,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
           nombres: nombres,
           apellidos: apellidos,
           especialidad: especialidad,
+          horas:horas,
           telefono: telefono,
           dni: dni
         },
@@ -356,6 +433,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
       })
 
 
+}
 
     });
   </script>

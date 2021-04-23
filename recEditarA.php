@@ -20,26 +20,31 @@ require_once('conexion.php');
         $nombres2 = $_POST['nombres2'];
         $apellidos2 = $_POST['apellidos2'];
         $especialidad2 = $_POST['especialidad2'];
-        $horas2 = $_POST['horas2'];
-        $telefono2 = $_POST['telefono2'];
-        $dni2 = $_POST['dni2'];
+        $curso2 = $_POST['curso2'];
+        $fecha_inicio2 = $_POST['fecha_inicio2'];
+        $fecha_fin2 = $_POST['fecha_fin2'];
+        $edad2 = $_POST['edad2'];
+        $observaciones2 = $_POST['obsevaciones2'];
+        $id_alum2 = $_POST['id_alum2'];
         $id_pro2 = $_POST['id_pro2'];
     
-            $respuesta = $servidor->query("UPDATE `profesor` 
+            $respuesta = $servidor->query("UPDATE `alumno` 
             SET `nombres` = '$nombres2', 
             `apellidos` = '$apellidos2', 
             `especialidad` = '$especialidad2', 
-            `horas` = '$horas2', 
-            `telefono` = '$telefono2', 
-            `dni` = '$dni2'
-             WHERE `profesor`.`id_pro` = '$id_pro2';");
+            `edad` = '$edad2', 
+            `obsevaciones` = '$observaciones2', 
+            `curso` = '$curso2', 
+            `fecha_inicio` = '$fecha_inicio2',
+            `fecha_fin` = '$fecha_fin2'
+             WHERE `alumno`.`id_alum` = '$id_alum2';");
     
         if (!$respuesta) {
                 echo $servidor->error;
         } else {
             echo "<script LANGUAGE='javascript'>
-            
-                            location.href ='profesores.php';
+    
+            location.href ='alumnos.php?id_pro=$id_pro2';
           </script>";
             }
 ?>

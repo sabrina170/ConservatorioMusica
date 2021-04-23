@@ -15,12 +15,13 @@ switch ($accion) {
         $nombres = $_POST['nombres'];
         $apellidos = $_POST['apellidos'];
         $especialidad = $_POST['especialidad'];
+        $horas = $_POST['horas'];
         $telefono = $_POST['telefono'];
         $dni = $_POST['dni'];
 
         $respuesta = $servidor->query("INSERT INTO `profesor` (`id_pro`, `nombres`, 
-        `apellidos`, `especialidad`, `telefono`, `dni`) 
-        VALUES (NULL, '$nombres', '$apellidos', '$especialidad', '$telefono', '$dni');");
+        `apellidos`, `especialidad`,`horas`, `telefono`, `dni`) 
+        VALUES (NULL, '$nombres', '$apellidos', '$especialidad','$horas', '$telefono', '$dni');");
 
         if (!$respuesta) {
             echo $servidor->error;
@@ -28,7 +29,7 @@ switch ($accion) {
             echo 1;
         }
     break;
-    
+
     case  'RegistrarUsuario':
        require_once('conexion.php');
     
@@ -37,10 +38,11 @@ switch ($accion) {
             $usuario = $_POST['usuario'];
             $clave = $_POST['clave'];
             $tipo = $_POST['tipo'];
+            $cargo = $_POST['cargo'];
     
             $respuesta = $servidor->query("INSERT INTO `adminuser` (`id`, `nombres`, 
-            `apellidos`, `usuario`, `clave`, `tipo`) 
-            VALUES (NULL, '$nombres', '$apellidos', '$usuario', '$clave', '$tipo');");
+            `apellidos`, `usuario`, `clave`,`cargo`, `tipo`) 
+            VALUES (NULL, '$nombres', '$apellidos', '$usuario', '$clave','$cargo', '$tipo');");
     
             if (!$respuesta) {
                 echo $servidor->error;

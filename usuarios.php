@@ -44,6 +44,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="assets/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Page plugins -->
@@ -54,55 +55,70 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
 <body>
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical 
-   fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main"
-   style="
-      background: linear-gradient(
-        50deg,
-        rgba(34, 74, 115, 0.6),
-        rgba(34, 74, 115, 1) 
-      );" 
-    >
-   
+      fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main" style="
+          background-image: linear-gradient(rgba(34, 74, 115, 0.8),
+          rgba(34, 74, 115, 0.8) ), url(img/dd.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;">
+
     <div class="scrollbar-inner">
       <!-- Brand -->
-      <div class="sidenav-header  align-items-center">
-     
-    
+      <div class="sidenav-header ">
+        <br><br>
+      <ul class="navbar-nav align-items-center  ml-md-auto ">
+      <li class="nav-item d-xl-none">
+              <!-- Sidenav toggler -->
+              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                <div class="sidenav-toggler-inner">
+                  <i class="fas fa-times-circle fa-2x text-white"></i>
+                </div>
+              </div>
+            </li>
+      </ul>
       </div>
-     
+        <br>
       <div class="navbar-inner">
-      <img src="img/violinista.png" class="img-fluid rounded-pill"  alt=""
-          />
+      
+        <img src="img/logo2.jpg" class="img-fluid rounded-pill" alt="" />
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link " href="profesores.php">
-                <i class="fas fa-chalkboard-teacher" style="color: white;"></i>
-                <span class="nav-link-text" style="color: white;
-               font-size: 15px; ">Profesores</span>
+                <i class="fas fa-chalkboard-teacher " style="color: white;"></i>
+                <span class="nav-link-text" style="color: white;">Profesores</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="usuarios.php">
-              <i class="fas fa-users text-dark" ></i>
-                <span class=" nav-link-text "  style="font-size: 15px;">Usuarios</span>
+                <i class="fas fa-users" text-dark></i>
+                <span class=" nav-link-text " >Usuarios</span>
               </a>
             </li>
-            
+            <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
+            <i class="fas fa-sign-out-alt"></i> Salir
+            </a>
           </ul>
+
           <!-- Divider -->
           <hr class="my-3">
-        
+
         </div>
       </div>
     </div>
-</nav>
+  </nav>
 
 <div class="main-content" id="panel">
     <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom" style="background-color: #224a73;">
+    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom"  style="
+            background-image: linear-gradient(rgba(34, 74, 115, 0.8),
+            rgba(34, 74, 115, 0.8) ), url(img/fondo2.jpg);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
@@ -137,12 +153,12 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="cerrar_sesion.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-sign-in-alt"></i> Salir
+              <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
+              <i class="fas fa-sign-out-alt"></i>  Salir
               </a>
             </li>
           </ul>
-        
+
         </div>
       </div>
     </nav>
@@ -221,18 +237,29 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                 <h6 class="heading-small text-muted mb-4">Informacion Usuario</h6>
                 <div class="pl-lg-4">
                   <div class="row">
-                    <div class="col-lg-6">
+                  <div class="text-center">
+            <span class="badge rounded-pill text-center" style="background-color: #fed6dd;color:#af152e;" id="cont1"></span>
+            </div>
+            <br>
+                  <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Cargo</label>
+                        <input type="text" id="cargo" name="cargo" class="form-control" placeholder="Contraseña">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
                       <div class="form-group">
                         <label class="form-control-label" for="input-username">Usuario</label>
                         <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" >
                       </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Contraseña</label>
                         <input type="text" id="clave" name="clave" class="form-control" placeholder="Contraseña">
                       </div>
                     </div>
+                    
                   </div>
                   <div class="row">
                     <div class="col-lg-6">
@@ -266,47 +293,54 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
           <div class="card">
             <!-- Card header -->
             <div class="card-header border-0">
-              <h3 class="mb-0">Light table</h3>
+              <h3 class="mb-0">Usuarios Registrados</h3>
             </div>
             <!-- Light table -->
             <div class="table-responsive">
-              <table  id="usuarios" class="table align-items-center table-flush">
+              <table  id="usuarios" >
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col" class="sort" data-sort="name">Nr0</th>
-                    <th scope="col" class="sort" data-sort="budget">Nombres</th>
-                    <th scope="col" class="sort" data-sort="status">Apellidos</th>
+                    <th scope="col"  data-sort="name">Nr0</th>
+                    <th scope="col" data-sort="budget">Nombres</th>
+                    <th scope="col" data-sort="status">Apellidos</th>
+                    <th scope="col">Cargo</th>
                     <th scope="col">Usuario</th>
-                    <th scope="col" class="sort" data-sort="completion">Constraseña</th>
+                    <th scope="col" data-sort="completion">Constraseña</th>
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
-                <tbody class="list">
+                <tbody>
                 <?php $posicion=1; foreach ($lista as $show){
               ?> 
                   <tr>
-                    <th scope="row">
+                    <th >
                     <?php echo $posicion; $posicion++?>
                     </th>
-                    <td class="budget">
+                    <td >
                     <?php echo $show['nombres']?>
                     </td>
-                    <td class="budget">
+                    <td >
                     <?php echo $show['apellidos']?>
                     </td>
-                    <td class="budget">
+                    <td >
+                    <?php echo $show['cargo']?>
+                    </td>
+                    <td >
                     <?php echo $show['usuario']?>
                     </td>
-                    <td class="budget">
+                    <td >
                     <?php echo $show['clave']?>
                     </td>
     
-                    <td class="budget">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
+                    <td>
+                    <a href=""  data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id'] ?>"> <i class="fas fa-edit"></i></a>
+                       <a href=""  data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                     </td>
                     
                   </tr>
+                  <?php include('modals/ModalEditarU.php') ?>
+              <?php include('modals/ModalEliminarU.php') ?>
+
                   <?php }?>
                 </tbody>
               </table>
@@ -329,6 +363,9 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
         </div>
       </footer>
     </div>
+
+
+
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
@@ -369,8 +406,30 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
           usuario = $('#usuario').val();
           clave = $('#clave').val();
           tipo = $('#tipo').val();
+          cargo = $('#cargo').val();
   
-          console.log(nombres);
+          if(cargo == '' ){
+        document.getElementById('cont1').innerHTML='Falta cargo';
+        return false;
+      }
+      if(usuario == '' ){
+        document.getElementById('cont1').innerHTML='Falta usuario';
+        return false;
+      }
+      if(clave == '' ){
+        document.getElementById('cont1').innerHTML='Falta contraseña';
+        return false;
+      }
+          if(nombres == '' ){
+        document.getElementById('cont1').innerHTML='Falta nombres ';
+        return false;
+      }
+      if(apellidos == ''  ){
+        document.getElementById('cont1').innerHTML='Falta apellidos';
+        return false;
+      }
+      
+      else{
   
           $.ajax({
               method: 'POST',
@@ -381,6 +440,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
               apellidos: apellidos,
               usuario:usuario,
               clave: clave,
+              cargo: cargo,
               tipo:tipo
               },
               success: function(data) {
@@ -406,12 +466,14 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
               }
           })
   
-  
+        }
   
   });
   
   </script>
   <script>
+  
+
   $(document).ready(function(){
   
     $('#usuarios').DataTable( {

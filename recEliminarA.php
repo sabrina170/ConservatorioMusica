@@ -18,27 +18,16 @@
         require_once('conexion.php');
 
         $id_pro2 = $_POST['id_pro2'];
-        $respuesta = $servidor->query("DELETE FROM `profesor` 
-             WHERE `profesor`.`id_pro` = '$id_pro2';");
+        $id_alum2 = $_POST['id_alum2'];
+        $respuesta = $servidor->query("DELETE FROM `alumno` 
+             WHERE `alumno`.`id_alum` = '$id_alum2';");
     
-        if ($respuesta) {
-            $respuesta2 = $servidor->query("DELETE FROM `alumno` 
-            WHERE `alumno`.`profesor` = '$id_pro2';");
-            if (!$respuesta2) {
+        if (!$respuesta) {
                 echo $servidor->error;
         } else {
                 
             echo "<script LANGUAGE='javascript'>
-    
-                            location.href ='profesores.php';
+            location.href ='alumnos.php?id_pro=$id_pro2';
           </script>";
             }
-        } else {
-                
-            echo $servidor->error;
-
-            
-
-        }
-        
 ?>

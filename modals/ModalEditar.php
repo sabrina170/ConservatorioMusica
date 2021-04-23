@@ -24,10 +24,19 @@
             </div>
         </div>
 
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-            <input type="text"  class="form-control" name="especialidad2" id="especialidad2" value="<?php echo $show['especialidad']?>" required/>
-            <label class="form-label" for="form3Example3">Especialidad</label>
+        <div class="row mb-4">
+            <div class="col">
+            <div class="form-outline">
+                <input type="text"  class="form-control" name="especialidad2" id="especialidad2" value="<?php echo $show['especialidad']?>" required/>
+                <label class="form-label" for="form3Example1">Telefono</label>
+            </div>
+            </div>
+            <div class="col">
+            <div class="form-outline">
+                <input type="number"  class="form-control" name="horas2" id="horas2" value="<?php echo $show['horas']?>" required/>
+                <label class="form-label" for="form3Example2">Horas</label>
+            </div>
+            </div>
         </div>
 
         <div class="row mb-4">
