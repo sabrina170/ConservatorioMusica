@@ -18,15 +18,12 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Conservatorio de Musica de Lima</title>
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-    />
-    <link rel="stylesheet" href="css/mdb.min.css" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Conservatorio de Musica de Lima</title>
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="css/mdb.min.css" />
   <!-- Favicon -->
   <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
   <!-- Fonts -->
@@ -41,47 +38,52 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
 
 <body>
   <!-- Sidenav -->
-<nav class="sidenav navbar navbar-vertical 
-   fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main" >
+  <nav class="sidenav navbar navbar-vertical 
+   fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main" style="
+      background: linear-gradient(
+        50deg,
+        rgba(34, 74, 115, 0.6),
+        rgba(34, 74, 115, 1) 
+      );">
+
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
-        <a class="navbar-brand" href="javascript:void(0)">
-       LOGO
-        <!-- <img src="assets/img/brand/blue.png" class="navbar-brand-img" alt="..."> -->
-        </a>
+
+
       </div>
+
       <div class="navbar-inner">
+        <img src="img/violinista.png" class="img-fluid rounded-pill" alt="" />
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" href="profesores.php">
-                <i class="ni ni-tv-2 text-dark"></i>
+                <i class="fas fa-chalkboard-teacher text-dark"></i>
                 <span class="nav-link-text">Profesores</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="usuarios.php">
-                <i class="ni ni-planet text-dark"></i>
-                <span class="nav-link-text">Usuarios</span>
+                <i class="fas fa-users" style="color: white;"></i>
+                <span class=" nav-link-text " style="color: white;">Usuarios</span>
               </a>
             </li>
-            
+
           </ul>
           <!-- Divider -->
           <hr class="my-3">
-        
+
         </div>
       </div>
     </div>
-</nav>
+  </nav>
 
   <!-- Main content -->
-<div class="main-content" id="panel"  style="background-color: #224a73;">
-    <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom">
+  <div class="main-content" id="panel">
+    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom" style="background-color: #224a73;">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
@@ -115,134 +117,125 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="cerrar_sesion.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-sign-in-alt"></i> Salir
+              </a>
+            </li>
           </ul>
-        
+
         </div>
       </div>
     </nav>
-    <!-- Header -->
-
-
-    
-<!-- Modal -->
 
 
 
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Alumno</h5>
-                <button
-                type="button"
-                class="btn-close"
-                data-mdb-dismiss="modal"
-                aria-label="Close"
-                ></button>
-            </div>
-            <div class="modal-body">
+    <!-- Modal -->
 
-    <form method="get">
-        <!-- 2 column grid layout with text inputs for the first and last names -->
-        <div class="row mb-4">
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="nombres" id="nombres" value="" required />
-                <label class="form-label" for="form3Example1">Nombres</label>
-            </div>
-            </div>
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="apellidos" id="apellidos" value="" required/>
-                <label class="form-label" for="form3Example2">Apellidos</label>
-            </div>
-            </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nuevo Alumno</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <form method="get">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" class="form-control" name="nombres" id="nombres" value="" required />
+                    <label class="form-label" for="form3Example1">Nombres</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" class="form-control" name="apellidos" id="apellidos" value="" required />
+                    <label class="form-label" for="form3Example2">Apellidos</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" class="form-control" name="especialidad" id="especialidad" value="" required />
+                <label class="form-label" for="form3Example3">Especialidad</label>
+              </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" class="form-control" name="curso" id="curso" value="" required />
+                    <label class="form-label" for="form3Example1">Curso</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="number" class="form-control" name="edad" id="edad" value="" required />
+                    <label class="form-label" for="form3Example2">Edad</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="date" class="form-control" name="fecha_inicio" id="fecha_inicio" value="" required />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="date" class="form-control" name="fecha_fin" id="fecha_fin" value="" required />
+                  </div>
+                </div>
+              </div>
+              <div class="form-outline mb-4">
+                <textarea class="form-control" name="obsevaciones" id="obsevaciones" rows="4"></textarea>
+                <label class="form-label" for="textAreaExample">Observaciones </label>
+              </div>
+              <input type="hidden" class="form-control" name="profesor" id="profesor" value="<?php echo $id_pro; ?>" required disabled>
+
+
+              <!-- Submit button -->
+              <button href="#" id="upd-pin" class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
+
+            </form>
+
+          </div>
+
         </div>
-
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-            <input type="email"  class="form-control" name="especialidad" id="especialidad" value="" required/>
-            <label class="form-label" for="form3Example3">Especialidad</label>
-        </div>
-        <div class="row mb-4">
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="curso" id="curso" value="" required />
-                <label class="form-label" for="form3Example1">Curso</label>
-            </div>
-            </div>
-            <div class="col">
-            <div class="form-outline">
-                <input type="number"  class="form-control" name="edad" id="edad" value="" required/>
-                <label class="form-label" for="form3Example2">Edad</label>
-            </div>
-            </div>
-        </div>
-
-        <div class="row mb-4">
-            <div class="col">
-            <div class="form-outline">
-                <input type="date"  class="form-control" name="fecha_inicio" id="fecha_inicio" value="" required/>
-            </div>
-            </div>
-            <div class="col">
-            <div class="form-outline">
-                <input type="date"  class="form-control" name="fecha_fin" id="fecha_fin" value="" required/>
-            </div>
-            </div>
-        </div>
-        <div class="form-outline mb-4">
-        <textarea class="form-control" name="obsevaciones" id="obsevaciones" rows="4"></textarea>
-        <label class="form-label" for="textAreaExample">Observaciones </label>
-        </div>
-        <input type="hidden" class="form-control" name="profesor" id="profesor" value="<?php echo $id_pro;?>" required disabled>
-       
-
-        <!-- Submit button -->
-        <button href="#"  id="upd-pin"  class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
-
-    </form>
-            
-            </div>
-            
-            </div>
-        </div>
-</div>
+      </div>
+    </div>
 
     <!-- Header -->
-    <div class="header  pb-6" style="background-color: #224a73;">
+    <div class="header  pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h1 text-white d-inline-block mb-0">ALUMNOS</h6>
+              <h6 class="h1  d-inline-block mb-0" style="color:#224a73">ALUMNOS</h6>
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <!-- <ol class="breadcrumb breadcrumb-links breadcrumb-dark"> -->
-                  <!-- <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> </a></li> -->
-                  <!-- <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                <!-- <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> </a></li> -->
+                <!-- <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a  type="button"
-        data-mdb-toggle="modal"
-        data-mdb-target="#exampleModal" class="btn btn-sm btn-neutral">Nuevo + </a>
+              <a type="button" data-mdb-toggle="modal" data-mdb-target="#exampleModal" class="btn btn-sm btn-neutral">Nuevo + </a>
               <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
             </div>
           </div>
           <!-- Card stats -->
-         
+
         </div>
       </div>
     </div>
- 
+
 
     <div class="container-fluid mt--6">
       <div class="row">
@@ -250,11 +243,11 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
           <div class="card">
             <!-- Card header -->
             <div class="card-header border-0">
-              <h3 class="mb-0">Light table</h3>
+              <h3 class="mb-0"></h3>
             </div>
             <!-- Light table -->
             <div class="table-responsive">
-              <table  id="usuarios" class="table align-items-center table-flush">
+              <table id="usuarios" class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
                     <th scope="col" class="sort" data-sort="name">Nr0</th>
@@ -269,48 +262,50 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
                   </tr>
                 </thead>
                 <tbody class="list">
-                <?php $posicion=1; foreach ($registro as $show){
-              ?> 
-                  <tr>
-                    <th scope="row">
-                    <?php echo $posicion; $posicion++?>
-                    </th>
-                    <td class="budget">
-                    <?php echo $show['nombres']?>
-                    </td>
-                    <td class="budget">
-                    <?php echo $show['apellidos']?>
-                    </td>
-                    <td class="budget">
-                    <?php echo $show['especialidad']?>
-                    </td>
-                    <td class="budget">
-                    <?php echo $show['curso']?>
-                    </td>
-                    <td class="budget">
-                    <?php echo $show['edad']?>
-                    </td>
-                    <td class="budget">
-                    <?php echo $show['fecha_inicio']?>
-                    </td>
-                    <td class="budget">
-                    <?php echo $show['fecha_fin']?>
-                    </td>
-                    <td class="budget">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
-                    </td>
-                    
-                  </tr>
-                  <?php }?>
+                  <?php $posicion = 1;
+                  foreach ($registro as $show) {
+                  ?>
+                    <tr>
+                      <th scope="row">
+                        <?php echo $posicion;
+                        $posicion++ ?>
+                      </th>
+                      <td class="budget">
+                        <?php echo $show['nombres'] ?>
+                      </td>
+                      <td class="budget">
+                        <?php echo $show['apellidos'] ?>
+                      </td>
+                      <td class="budget">
+                        <?php echo $show['especialidad'] ?>
+                      </td>
+                      <td class="budget">
+                        <?php echo $show['curso'] ?>
+                      </td>
+                      <td class="budget">
+                        <?php echo $show['edad'] ?>
+                      </td>
+                      <td class="budget">
+                        <?php echo $show['fecha_inicio'] ?>
+                      </td>
+                      <td class="budget">
+                        <?php echo $show['fecha_fin'] ?>
+                      </td>
+                      <td class="budget">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                      </td>
+
+                    </tr>
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
-            
+
           </div>
         </div>
       </div>
-     
+
     </div>
 
 
@@ -318,9 +313,9 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-      
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
   <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/js-cookie/js.cookie.js"></script>
@@ -331,7 +326,7 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
   <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="assets/js/argon.js?v=1.2.0"></script>
-  
+
   <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
@@ -345,107 +340,109 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script type="text/javascript">
-      </script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
-        <script>
-        $('#upd-pin').on('click', function() {
+  </script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script>
+    $('#upd-pin').on('click', function() {
 
-        nombres = $('#nombres').val();
-        apellidos = $('#apellidos').val();
-        especialidad = $('#especialidad').val();
-        curso = $('#curso').val();
-        edad = $('#edad').val();
-        fecha_inicio =$('#fecha_inicio').val();
-        fecha_fin = $('#fecha_fin').val();
-        obsevaciones = $('#obsevaciones').val();
-        profesor = $('#profesor').val();
+      nombres = $('#nombres').val();
+      apellidos = $('#apellidos').val();
+      especialidad = $('#especialidad').val();
+      curso = $('#curso').val();
+      edad = $('#edad').val();
+      fecha_inicio = $('#fecha_inicio').val();
+      fecha_fin = $('#fecha_fin').val();
+      obsevaciones = $('#obsevaciones').val();
+      profesor = $('#profesor').val();
 
-        console.log(especialidad);
+      console.log(especialidad);
 
-        $.ajax({
-            method: 'POST',
-            url: 'acciones.php',
-            data: {
-            accion: "RegistrarAlumno",
-            nombres: nombres,
-            apellidos :apellidos,
-            especialidad : especialidad,
-            curso : curso,
-            edad : edad,
-            fecha_inicio : fecha_inicio,
-            fecha_fin : fecha_fin,
-            obsevaciones : obsevaciones,
-            profesor : profesor
-            },
+      $.ajax({
+        method: 'POST',
+        url: 'acciones.php',
+        data: {
+          accion: "RegistrarAlumno",
+          nombres: nombres,
+          apellidos: apellidos,
+          especialidad: especialidad,
+          curso: curso,
+          edad: edad,
+          fecha_inicio: fecha_inicio,
+          fecha_fin: fecha_fin,
+          obsevaciones: obsevaciones,
+          profesor: profesor
+        },
 
-            success: function(data) {
-            console.log(data);
-            if (data == 1) {
-                Swal.fire({
-                type: 'success',
-                title: 'Alumnos registrado',
-                timer: 1200,
-                showConfirmButton: false
-                }).then(function() {
-                    location.href ="alumnos.php?id_pro=<?php echo $id_pro;?>";
-                });
-            } else {
-                Swal.fire({
-                icon: 'error',
-                title: 'No se pudo registrar',
-                text: data
-                }).then(function() {
+        success: function(data) {
+          console.log(data);
+          if (data == 1) {
+            Swal.fire({
+              type: 'success',
+              title: 'Alumnos registrado',
+              timer: 1200,
+              showConfirmButton: false
+            }).then(function() {
+              location.href = "alumnos.php?id_pro=<?php echo $id_pro; ?>";
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'No se pudo registrar',
+              text: data
+            }).then(function() {
 
-                });
-            }
-            }
-        })
-
-
-
-});
-
-</script>
-<script>
-$(document).ready(function(){
-
-  $('#usuarios').DataTable( {
-    "searching": true,
-          "lengthChange": true,
-          "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todo"]],
-          dom: 'Blfrtip',
-      buttons: [
-        //   {
-        //   extend: 'excelHtml5',
-        //   exportOptions: {
-
-        //   }
-        // },
-        // {
-        //   extend: 'pdfHtml5',
-        //   orientation: 'landscape',
-        //   pageSize: 'LEGAL',
-        //   exportOptions: {
-
-        //   }
-        // },
-        
-        // 'print',
-     
-      ],
-      exportOptions: {
-        modifier: {
-          // DataTables core
-          order: 'index', // 'current', 'applied',
-          //'index', 'original'
-          page: 'all', // 'all', 'current'
-          search: 'none' // 'none', 'applied', 'removed'
+            });
+          }
         }
-      }
-        
-    } );
-});
+      })
 
-</script>
+
+
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+
+      $('#usuarios').DataTable({
+        "searching": true,
+        "lengthChange": true,
+        "lengthMenu": [
+          [10, 25, 50, -1],
+          [10, 25, 50, "Todo"]
+        ],
+        dom: 'Blfrtip',
+        buttons: [
+          //   {
+          //   extend: 'excelHtml5',
+          //   exportOptions: {
+
+          //   }
+          // },
+          // {
+          //   extend: 'pdfHtml5',
+          //   orientation: 'landscape',
+          //   pageSize: 'LEGAL',
+          //   exportOptions: {
+
+          //   }
+          // },
+
+          // 'print',
+
+        ],
+        exportOptions: {
+          modifier: {
+            // DataTables core
+            order: 'index', // 'current', 'applied',
+            //'index', 'original'
+            page: 'all', // 'all', 'current'
+            search: 'none' // 'none', 'applied', 'removed'
+          }
+        }
+
+      });
+    });
+  </script>
 </body>
+
 </html>

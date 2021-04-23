@@ -18,15 +18,12 @@ $registro = $servidor->query("SELECT * FROM profesor");
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Conservatorio de Musica de Lima</title>
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-    />
-    <link rel="stylesheet" href="css/mdb.min.css" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Conservatorio de Musica de Lima</title>
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="css/mdb.min.css" />
   <!-- Favicon -->
   <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
   <!-- Fonts -->
@@ -41,54 +38,51 @@ $registro = $servidor->query("SELECT * FROM profesor");
 
 <body>
   <!-- Sidenav -->
-<nav class="sidenav navbar navbar-vertical 
-   fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main"
-   style="
+  <nav class="sidenav navbar navbar-vertical 
+   fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main" style="
       background: linear-gradient(
         50deg,
         rgba(34, 74, 115, 0.6),
         rgba(34, 74, 115, 1) 
-      );" 
-    >
-   
+      );">
+
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
-     
-    
+
+
       </div>
-     
+
       <div class="navbar-inner">
-      <img src="img/violinista.png" class="img-fluid rounded-pill"  alt=""
-          />
+        <img src="img/violinista.png" class="img-fluid rounded-pill" alt="" />
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" href="profesores.php">
-              <i class="fas fa-chalkboard-teacher text-dark"></i>
+                <i class="fas fa-chalkboard-teacher text-dark"></i>
                 <span class="nav-link-text">Profesores</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="usuarios.php">
-              <i class="fas fa-users" style="color: white;"></i>
+                <i class="fas fa-users" style="color: white;"></i>
                 <span class=" nav-link-text " style="color: white;">Usuarios</span>
               </a>
             </li>
-            
+
           </ul>
           <!-- Divider -->
           <hr class="my-3">
-        
+
         </div>
       </div>
     </div>
-</nav>
+  </nav>
 
   <!-- Main content -->
-<div class="main-content" id="panel"  >
+  <div class="main-content" id="panel">
     <!-- Topnav -->
     <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom" style="background-color: #224a73;">
       <div class="container-fluid">
@@ -126,86 +120,86 @@ $registro = $servidor->query("SELECT * FROM profesor");
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="cerrar_sesion.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-sign-in-alt"></i> Salir
+                <i class="fas fa-sign-in-alt"></i> Salir
               </a>
             </li>
           </ul>
-        
+
         </div>
       </div>
     </nav>
     <!-- Header -->
 
 
-    
-<!-- Modal -->
+
+    <!-- Modal -->
 
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Profesor</h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close" ></button>
-            </div>
-            <div class="modal-body">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nuevo Profesor</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
 
-    <form method="get">
-        <!-- 2 column grid layout with text inputs for the first and last names -->
-        <div class="row mb-4">
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="nombres" id="nombres" value="" required />
-                <label class="form-label" for="form3Example1">Nombres</label>
-            </div>
-            </div>
-            <div class="col">
-            <div class="form-outline">
-                <input type="text"  class="form-control" name="apellidos" id="apellidos" value="" required/>
-                <label class="form-label" for="form3Example2">Apellidos</label>
-            </div>
-            </div>
+            <form method="get">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" class="form-control" name="nombres" id="nombres" value="" required />
+                    <label class="form-label" for="form3Example1">Nombres</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" class="form-control" name="apellidos" id="apellidos" value="" required />
+                    <label class="form-label" for="form3Example2">Apellidos</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" class="form-control" name="especialidad" id="especialidad" value="" required />
+                <label class="form-label" for="form3Example3">Especialidad</label>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="number" class="form-control" name="telefono" id="telefono" value="" required />
+                    <label class="form-label" for="form3Example1">Telefono</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="number" class="form-control" name="dni" id="dni" value="" required />
+                    <label class="form-label" for="form3Example2">Dni</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button href="#" id="upd-pin" class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
+
+            </form>
+
+          </div>
+
         </div>
-
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-            <input type="email"  class="form-control" name="especialidad" id="especialidad" value="" required/>
-            <label class="form-label" for="form3Example3">Especialidad</label>
-        </div>
-
-        <div class="row mb-4">
-            <div class="col">
-            <div class="form-outline">
-                <input type="number"  class="form-control" name="telefono" id="telefono" value="" required/>
-                <label class="form-label" for="form3Example1">Telefono</label>
-            </div>
-            </div>
-            <div class="col">
-            <div class="form-outline">
-                <input type="number"  class="form-control" name="dni" id="dni" value="" required/>
-                <label class="form-label" for="form3Example2">Dni</label>
-            </div>
-            </div>
-        </div>
-
-        <!-- Submit button -->
-        <button href="#"  id="upd-pin"  class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
-
-        </form>
-            
-            </div>
-            
-            </div>
-        </div>
-</div>
+      </div>
+    </div>
 
 
 
 
 
     <!-- Header -->
-    <div class="header  pb-6" >
+    <div class="header  pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
@@ -220,70 +214,71 @@ $registro = $servidor->query("SELECT * FROM profesor");
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a  type="button" data-mdb-toggle="modal"  data-mdb-target="#exampleModal" class="btn btn-sm btn-neutral">Nuevo + </a>
+              <a type="button" data-mdb-toggle="modal" data-mdb-target="#exampleModal" class="btn btn-sm btn-neutral">Nuevo + </a>
               <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
             </div>
           </div>
           <!-- Card stats -->
           <div class="row">
-          <?php $posicion=1; foreach ($registro as $show){
-              ?>
+            <?php $posicion = 1;
+            foreach ($registro as $show) {
+            ?>
 
-            <div class="col-xl-3 col-md-6">
+              <div class="col-xl-6 col-md-6">
 
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><?php echo $show['especialidad']?></h5>
-                      <span class="h2 font-weight-bold mb-0"><?php echo $show['nombres']?></span>
-                      <span class="h2 font-weight-bold mb-0"><?php echo $show['apellidos']?></span>
-                      
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-dark text-white rounded-circle shadow">
-                      
-                      <a href="" style="color: white;" data-mdb-toggle="modal"  data-mdb-target="#edit_modal<?php echo $show['id_pro']?>" ><i class="fas fa-pen"></i></a>
+                <div class="card card-stats">
+                  <!-- Card body -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-0"><?php echo $show['especialidad'] ?></h5>
+                        <span class="h2 font-weight-bold mb-0"><?php echo $show['nombres'] ?></span>
+                        <span class="h2 font-weight-bold mb-0"><?php echo $show['apellidos'] ?></span>
+
                       </div>
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                     
-                      <a href="" style="color: white;"  data-mdb-toggle="modal"  data-mdb-target="#eliminar_modal<?php echo $show['id_pro']?>" > <i class="fas fa-trash-alt"></i></a>
-            
+                      <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-dark text-white rounded-circle shadow">
+
+                          <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id_pro'] ?>"><i class="fas fa-pen"></i></a>
+                        </div>
+                        <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+
+                          <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id_pro'] ?>"> <i class="fas fa-trash-alt"></i></a>
+
+                        </div>
+
                       </div>
-                      
                     </div>
+                    <span class="h5 text-nowrap"><i class="fas fa-phone-volume"></i> <?php echo $show['telefono'] ?></span>
+                    <br>
+
+                    <span class="h5 text-nowrap"><i class="fas fa-user-shield"></i> <?php echo $show['dni'] ?></span>
+
+                    <p class="mt-3 mb-0 text-sm">
+                      <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> <?php echo $show['id_pro'] ?></span>
+
+                      <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
+                      <strong> <i class="fas fa-user-friends"></i>
+                        <a class="h4 text-dark" href="alumnos.php?id_pro=<?php echo $show['id_pro']; ?>">Ver alumnos</a></strong>
+
+                    </p>
                   </div>
-                  <span class="h5 text-nowrap"><i class="fas fa-phone-volume"></i> <?php echo $show['telefono']?></span>
-                  <br>
-                  
-                  <span class="h5 text-nowrap"><i class="fas fa-user-shield"></i> <?php echo $show['dni']?></span>
-
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> <?php echo $show['id_pro']?></span>
-                   
-                    <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
-                  <strong> <i class="fas fa-user-friends"></i> 
-                   <a class="h4 text-dark" href="alumnos.php?id_pro=<?php echo $show['id_pro']; ?>" >Ver alumnos</a></strong> 
-      
-                  </p>
                 </div>
               </div>
-            </div>
-            <?php include('ModalEditar.php')?>
-            <?php include('ModalEliminar.php')?>
-      <?php }?>
+              <?php include('ModalEditar.php') ?>
+              <?php include('ModalEliminar.php') ?>
+            <?php } ?>
           </div>
         </div>
       </div>
     </div>
- 
+
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-      
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
   <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/js-cookie/js.cookie.js"></script>
@@ -294,7 +289,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
   <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="assets/js/argon.js?v=1.2.0"></script>
-  
+
   <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
@@ -308,73 +303,74 @@ $registro = $servidor->query("SELECT * FROM profesor");
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script type="text/javascript">
-      </script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
-      
+  </script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
 
   <script>
-  
-          $('#upd-pin').on('click', function() {
-  
-          nombres = $('#nombres').val();
-          apellidos = $('#apellidos').val();
-          especialidad = $('#especialidad').val();
-          telefono = $('#telefono').val();
-          dni = $('#dni').val();
-  
-          console.log(especialidad);
-  
-          $.ajax({
-              method: 'POST',
-              url: 'acciones.php',
-              data: {
-              accion: "RegistrarProfesor",
-              nombres: nombres,
-              apellidos: apellidos,
-              especialidad:especialidad,
-              telefono: telefono,
-              dni:dni
-              },
-              success: function(data) {
-              console.log(data);
-              if (data == 1) {
-                  Swal.fire({
-                  type: 'success',
-                  title: 'Profesor Registrado',
-                  timer: 1200,
-                  showConfirmButton: false
-                  }).then(function() {
-                      location.href ="profesores.php";
-                  });
-              } else {
-                  Swal.fire({
-                  icon: 'error',
-                  title: 'No se pudo registrar',
-                  text: data
-                  }).then(function() {
-  
-                  });
-              }
-              }
-          })
-  
-  
-  
-  });
-  
+    $('#upd-pin').on('click', function() {
+
+      nombres = $('#nombres').val();
+      apellidos = $('#apellidos').val();
+      especialidad = $('#especialidad').val();
+      telefono = $('#telefono').val();
+      dni = $('#dni').val();
+
+      console.log(especialidad);
+
+      $.ajax({
+        method: 'POST',
+        url: 'acciones.php',
+        data: {
+          accion: "RegistrarProfesor",
+          nombres: nombres,
+          apellidos: apellidos,
+          especialidad: especialidad,
+          telefono: telefono,
+          dni: dni
+        },
+        success: function(data) {
+          console.log(data);
+          if (data == 1) {
+            Swal.fire({
+              type: 'success',
+              title: 'Profesor Registrado',
+              timer: 1200,
+              showConfirmButton: false
+            }).then(function() {
+              location.href = "profesores.php";
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'No se pudo registrar',
+              text: data
+            }).then(function() {
+
+            });
+          }
+        }
+      })
+
+
+
+    });
   </script>
   <script>
-  $(document).ready(function(){
-  
-    $('#usuarios').DataTable( {
-      "searching": true,
-            "lengthChange": true,
-            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todo"]],
-            dom: 'Blfrtip',
+    $(document).ready(function() {
+
+      $('#usuarios').DataTable({
+        "searching": true,
+        "lengthChange": true,
+        "lengthMenu": [
+          [10, 25, 50, -1],
+          [10, 25, 50, "Todo"]
+        ],
+        dom: 'Blfrtip',
         buttons: [{
             extend: 'excelHtml5',
             exportOptions: {
-  
+
             }
           },
           {
@@ -382,12 +378,12 @@ $registro = $servidor->query("SELECT * FROM profesor");
             orientation: 'landscape',
             pageSize: 'LEGAL',
             exportOptions: {
-  
+
             }
           },
-          
+
           'print',
-       
+
         ],
         exportOptions: {
           modifier: {
@@ -398,13 +394,13 @@ $registro = $servidor->query("SELECT * FROM profesor");
             search: 'none' // 'none', 'applied', 'removed'
           }
         }
-          
-      } );
-  });
-  
+
+      });
+    });
   </script>
-  </body>
-  </html>
+</body>
+
+</html>
 </body>
 
 </html>
