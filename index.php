@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Conservatorio de Musica de Lima</title>
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/logo2.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
     <link
       rel="stylesheet"
@@ -52,12 +52,18 @@
 
   <section class="view">
       <div class="mask rgba-gradient">
+      <!-- <img
+    src="img/logo.png"
+    class="img-fluid"
+    height="30px"
+  /> -->
         <div class="container h-100 d-flex justify-content-center align-items-center">
-
+  
          
         <div  class="card" style="padding: 50px;">
+      
   <div class="card-body" style="text-align: center;">
-    <h2 class="card-title">LOGIN</h2>
+  
     <P class="caed-text">Conservatorio de música de Lima</P>
    <br>
     <form id="form-login" action="verifica-login.php" method="post">

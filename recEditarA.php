@@ -26,18 +26,22 @@ require_once('conexion.php');
         $edad2 = $_POST['edad2'];
         $observaciones2 = $_POST['obsevaciones2'];
         $id_alum2 = $_POST['id_alum2'];
+        $hora2 = $_POST['hora2'];
+        $minuto2 = $_POST['minuto2'];
         $id_pro2 = $_POST['id_pro2'];
     
-            $respuesta = $servidor->query("UPDATE `alumno` 
-            SET `nombres` = '$nombres2', 
-            `apellidos` = '$apellidos2', 
-            `especialidad` = '$especialidad2', 
-            `edad` = '$edad2', 
-            `obsevaciones` = '$observaciones2', 
-            `curso` = '$curso2', 
-            `fecha_inicio` = '$fecha_inicio2',
-            `fecha_fin` = '$fecha_fin2'
-             WHERE `alumno`.`id_alum` = '$id_alum2';");
+            $respuesta = $servidor->query("UPDATE alumno 
+            SET nombres = '$nombres2', 
+            apellidos = '$apellidos2', 
+            especialidad = '$especialidad2', 
+            edad = '$edad2', 
+            obsevaciones = '$observaciones2', 
+            curso = '$curso2', 
+            fecha_inicio = '$fecha_inicio2',
+            fecha_fin = '$fecha_fin2',
+            hora = '$hora2',
+            minuto = '$minuto2'
+             WHERE id_alum = '$id_alum2';");
     
         if (!$respuesta) {
                 echo $servidor->error;

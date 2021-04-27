@@ -43,7 +43,18 @@
                   </div>
                 </div>
               </div>
-
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="number" class="form-control" name="hora2" id="hora2" value="<?php echo $show['hora']?>" required />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="number" class="form-control" name="minuto2" id="minuto2" value="<?php echo $show['minuto']?>" required />
+                  </div>
+                </div>
+              </div>
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">

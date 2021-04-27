@@ -25,7 +25,7 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
   <link rel="stylesheet" href="css/mdb.min.css" />
   <!-- Favicon -->
-  <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
+  <link rel="icon" href="img/logo2.jpg" type="image/x-icon" />
   <!-- Fonts -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
@@ -203,18 +203,27 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
                   </div>
                 </div>
               </div>
-             
               <div class="row mb-4">
-              
                 <div class="col">
-                 
+                  <div class="form-outline">
+                    <input type="number" class="form-control" name="hora" id="hora" value="" required />
+                    <div class="form-helper">Horas</div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="number" class="form-control" name="minuto" id="minuto" value="" required />
+                    <div class="form-helper">Minutos</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col">
                   <div class="form-outline">
                     <input type="date" class="form-control" name="fecha_inicio" id="fecha_inicio" value="" required />
                     <div class="form-helper">Fecha de Inicio</div>
                   </div>
-                  
                 </div>
-
                 <div class="col">
                   <div class="form-outline">
                     <input type="date" class="form-control" name="fecha_fin" id="fecha_fin" value="" required />
@@ -287,6 +296,8 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
                     <th scope="col">Especialidad</th>
                     <th scope="col" class="sort" data-sort="completion">Curso</th>
                     <th scope="col" class="sort" data-sort="completion">Edad</th>
+                    <th scope="col" class="sort" data-sort="completion">Horas</th>
+                    <th scope="col" class="sort" data-sort="completion">Minutos</th>
                     <th scope="col" class="sort" data-sort="completion">Fecha Inicio</th>
                     <th scope="col" class="sort" data-sort="completion">Fecha Fin</th>
                     <th scope="col">Acciones</th>
@@ -315,6 +326,12 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
                       </td>
                       <td >
                         <?php echo $show['edad'] ?>
+                      </td>
+                      <td >
+                        <?php echo $show['hora'] ?> hrs.
+                      </td>
+                      <td >
+                        <?php echo $show['minuto'] ?> mins.
                       </td>
                       <td >
                         <?php echo $show['fecha_inicio'] ?>
@@ -383,6 +400,8 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
       especialidad = $('#especialidad').val();
       curso = $('#curso').val();
       edad = $('#edad').val();
+      hora = $('#hora').val();
+      minuto = $('#minuto').val();
       fecha_inicio = $('#fecha_inicio').val();
       fecha_fin = $('#fecha_fin').val();
       obsevaciones = $('#obsevaciones').val();
@@ -409,6 +428,19 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
         document.getElementById('cont1').innerHTML='Falta edad';
         return false;
       }
+      if(hora == '' ){
+        document.getElementById('cont1').innerHTML='Faltan horas';
+        return false;
+      }
+      if(minuto == '' ){
+        document.getElementById('cont1').innerHTML='Faltan minutos';
+        return false;
+      }
+      if(minuto >= 60 ){
+        document.getElementById('cont1').innerHTML='Los minutos deben ser menores a 60';
+        return false;
+      }
+      
       if(fecha_inicio == '' ){
         document.getElementById('cont1').innerHTML='Falta fecha de inicio';
         return false;
@@ -428,6 +460,8 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
           especialidad: especialidad,
           curso: curso,
           edad: edad,
+          hora:hora,
+          minuto:minuto,
           fecha_inicio: fecha_inicio,
           fecha_fin: fecha_fin,
           obsevaciones: obsevaciones,

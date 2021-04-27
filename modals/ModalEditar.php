@@ -28,13 +28,7 @@
             <div class="col">
             <div class="form-outline">
                 <input type="text"  class="form-control" name="especialidad2" id="especialidad2" value="<?php echo $show['especialidad']?>" required/>
-                <label class="form-label" for="form3Example1">Telefono</label>
-            </div>
-            </div>
-            <div class="col">
-            <div class="form-outline">
-                <input type="number"  class="form-control" name="horas2" id="horas2" value="<?php echo $show['horas']?>" required/>
-                <label class="form-label" for="form3Example2">Horas</label>
+                <label class="form-label" for="form3Example1">Especialidad</label>
             </div>
             </div>
         </div>

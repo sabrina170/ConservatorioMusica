@@ -15,13 +15,13 @@ switch ($accion) {
         $nombres = $_POST['nombres'];
         $apellidos = $_POST['apellidos'];
         $especialidad = $_POST['especialidad'];
-        $horas = $_POST['horas'];
+        // $horas = $_POST['horas'];
         $telefono = $_POST['telefono'];
         $dni = $_POST['dni'];
 
         $respuesta = $servidor->query("INSERT INTO `profesor` (`id_pro`, `nombres`, 
-        `apellidos`, `especialidad`,`horas`, `telefono`, `dni`) 
-        VALUES (NULL, '$nombres', '$apellidos', '$especialidad','$horas', '$telefono', '$dni');");
+        `apellidos`, `especialidad`, `telefono`, `dni`) 
+        VALUES (NULL, '$nombres', '$apellidos', '$especialidad', '$telefono', '$dni');");
 
         if (!$respuesta) {
             echo $servidor->error;
@@ -105,12 +105,14 @@ switch ($accion) {
         $fecha_inicio = $_POST['fecha_inicio'];
         $fecha_fin = $_POST['fecha_fin'];
         $obsevaciones = $_POST['obsevaciones'];
+        $hora = $_POST['hora'];
+        $minuto = $_POST['minuto'];
         $profesor = $_POST['profesor'];
 
         $respuesta = $servidor->query("INSERT INTO `alumno` (`id_alum`, `nombres`, `apellidos`, 
-        `edad`, `fecha_inicio`, `fecha_fin`, `curso`, `especialidad`, `obsevaciones`,
+        `edad`, `fecha_inicio`, `fecha_fin`,`hora`, `minuto`,  `curso`, `especialidad`, `obsevaciones`,
          `profesor`) 
-         VALUES (NULL, '$nombres', '$apellidos', '$edad', '$fecha_inicio', '$fecha_fin', 
+         VALUES (NULL, '$nombres', '$apellidos', '$edad', '$fecha_inicio', '$fecha_fin',  '$hora', '$minuto', 
          '$curso', '$especialidad', '$obsevaciones', '$profesor');");
 
         if (!$accion) {

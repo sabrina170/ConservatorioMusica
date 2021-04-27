@@ -32,7 +32,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Conservatorio de Musica de Lima</title>
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/logo2.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
     <link
       rel="stylesheet"
@@ -250,7 +250,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                     <div class="col-lg-4">
                       <div class="form-group">
                         <label class="form-control-label" for="input-username">Usuario</label>
-                        <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" >
+                        <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario">
                       </div>
                     </div>
                     <div class="col-lg-4">
@@ -265,28 +265,23 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-first-name">Nombres</label>
-                        <input type="text" id="nombres" name="nombres" class="form-control" placeholder="Nombres" >
+                        <input type="text" id="nombres" name="nombres" class="form-control" placeholder="Nombres">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Apellidos</label>
-                        <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" >
+                        <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos">
                       </div>
                     </div>
                   </div>
                 </div>
                 <input type="hidden" name="tipo" id="tipo" value="1">
                 <button href="#"  id="upd-pin"  class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
-
               </form>
             </div>
           </div>
         </div>
-
-
-
-
       </div>
       <div class="row">
         <div class="col">

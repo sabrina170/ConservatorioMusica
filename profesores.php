@@ -6,7 +6,7 @@ $usuario = $_SESSION['user_id'];
 $tipo_usuario = $_SESSION['tipo_user'];
 $hoy = date("Y-m-d");
 
-$registro = $servidor->query("SELECT * FROM profesor");
+
 
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Conservatorio de Musica de Lima</title>
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="img/logo2.jpg" type="image/x-icon" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
   <link rel="stylesheet" href="css/mdb.min.css" />
@@ -65,7 +65,6 @@ $registro = $servidor->query("SELECT * FROM profesor");
       </div>
         <br>
       <div class="navbar-inner">
-      
         <img src="img/logo2.jpg" class="img-fluid rounded-pill" alt="" />
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
@@ -115,7 +114,8 @@ $registro = $servidor->query("SELECT * FROM profesor");
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
-                <input class="form-control" placeholder="Search" type="text">
+                <input class="form-control" placeholder="Search" type="text" id="buscar">
+              
               </div>
             </div>
             <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
@@ -199,13 +199,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
                     
                   </div>
                 </div>
-                <div class="col">
-                  <div class="form-outline">
-                    <input type="number" class="form-control" name="horas" id="horas" value="" required />
-                    <label class="form-label" for="form3Example2">Horas trabajadas</label>
-                    
-                  </div>
-                </div>
+                
               </div>
 
               <div class="row mb-4">
@@ -261,66 +255,86 @@ $registro = $servidor->query("SELECT * FROM profesor");
               <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
             </div>
           </div>
+          
+          <br><br>
           <!-- Card stats -->
           <div class="row">
-            <?php $posicion = 1;
-            foreach ($registro as $show) {
-            ?>
+         
+          <div id="resultados">
+            <?php 
+            $registro = $servidor->query("SELECT * FROM profesor");
+            $posicion = 1;
+                foreach ($registro as $show) {
+                ?>
 
-              <div class="col-xl-6 col-md-6">
+                  <div class="col-xl-6 col-md-6">
 
-                <div class="card card-stats">
-                  <!-- Card body -->
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col">
-                        <h5 class="card-title text-uppercase text-muted mb-0"><?php echo $show['especialidad'] ?></h5>
-                        <span class="h2 font-weight-bold mb-0"><?php echo $show['nombres'] ?></span>
-                        <span class="h2 font-weight-bold mb-0"><?php echo $show['apellidos'] ?></span>
+                    <div class="card card-stats">
+                      <!-- Card body -->
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0"><?php echo $show['especialidad'] ?></h5>
+                            <span class="h2 font-weight-bold mb-0"><?php echo $show['nombres'] ?></span>
+                            <span class="h2 font-weight-bold mb-0"><?php echo $show['apellidos'] ?></span>
 
-                      </div>
-                      <div class="col-auto">
-                        <div class="icon icon-shape bg-gradient-dark text-white rounded-circle shadow">
+                          </div>
+                          <div class="col-auto">
+                            <div class="icon icon-shape bg-gradient-dark text-white rounded-circle shadow">
 
-                          <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id_pro'] ?>"><i class="fas fa-pen"></i></a>
+                              <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id_pro'] ?>"><i class="fas fa-pen"></i></a>
+                            </div>
+                            <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+
+                              <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id_pro'] ?>"> <i class="fas fa-trash-alt"></i></a>
+
+                            </div>
+
+                          </div>
                         </div>
-                        <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                        <span class="h5 text-nowrap"><i class="fas fa-phone-volume"></i> <?php echo $show['telefono'] ?></span>
+                        <br>
 
-                          <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id_pro'] ?>"> <i class="fas fa-trash-alt"></i></a>
+                        <span class="h5 text-nowrap"><i class="fas fa-user-shield"></i> <?php echo $show['dni'] ?></span>
+                        <br>
+                        <?php
+                          $pro =  $show['id_pro'];
+                          $registro2 = $servidor->query("SELECT * FROM alumno where profesor = '$pro';");
+                          $alumnos = $registro2->fetch_assoc();
+                          
+                          foreach ($registro2 as $alumnos){
+                          
+                            // $horas = $horas + $alumnos['hora'] ;
+                            // $minutos = $minutos + $alumnos['minuto'];
+                            
+                          }
 
-                        </div>
+                            ?>
+                        <!-- <span class="h5 text-nowrap"><i class="far fa-clock"></i>  <?php echo $horas;?> hrs.  <?php echo $minutos;?> min. </span> -->
 
+                        <p class="mt-3 mb-0 text-sm">
+                          
+                          
+                          <?php
+                          $pro =  $show['id_pro'];
+                          $registro3 = $servidor->query("SELECT COUNT(*) total FROM alumno where profesor = '$pro';");
+                          $alumnos = $registro3->fetch_assoc();
+                            
+                            ?>
+                          <span class="text-success mr-2 "><i class="fa fa-arrow-up fs-2x"></i> <strong><?php echo $alumnos['total'] ;?></strong></span>
+
+                          <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
+                          <strong> <i class="fas fa-user-friends"></i>
+                            <a class="h4 text-dark" href="alumnos.php?id_pro=<?php echo $show['id_pro']; ?>">Ver alumnos</a></strong>
+
+                        </p>
                       </div>
                     </div>
-                    <span class="h5 text-nowrap"><i class="fas fa-phone-volume"></i> <?php echo $show['telefono'] ?></span>
-                    <br>
-
-                    <span class="h5 text-nowrap"><i class="fas fa-user-shield"></i> <?php echo $show['dni'] ?></span>
-                    <br>
-                    <span class="h5 text-nowrap"><i class="far fa-clock"></i> <?php echo $show['horas'] ?>  hrs.</span>
-
-                    <p class="mt-3 mb-0 text-sm">
-                      
-                      
-                      <?php
-                      $pro =  $show['id_pro'];
-                      $registro3 = $servidor->query("SELECT COUNT(*) total FROM alumno where profesor = '$pro';");
-                      $alumnos = $registro3->fetch_assoc();
-                        
-                        ?>
-                      <span class="text-success mr-2 "><i class="fa fa-arrow-up fs-2x"></i> <strong><?php echo $alumnos['total'] ;?></strong></span>
-
-                      <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
-                      <strong> <i class="fas fa-user-friends"></i>
-                        <a class="h4 text-dark" href="alumnos.php?id_pro=<?php echo $show['id_pro']; ?>">Ver alumnos</a></strong>
-
-                    </p>
                   </div>
-                </div>
-              </div>
-              <?php include('modals/ModalEditar.php') ?>
-              <?php include('modals/ModalEliminar.php') ?>
-            <?php } ?>
+                  <?php include('modals/ModalEditar.php') ?>
+                  <?php include('modals/ModalEliminar.php') ?>
+                <?php } ?>
+          </div>
           </div>
         </div>
       </div>
@@ -359,14 +373,32 @@ $registro = $servidor->query("SELECT * FROM profesor");
   </script>
   <script type="text/javascript" src="js/mdb.min.js"></script>
 
+  <script>
+	$(function(){
+		$("#buscar").on("keyup", function(){
+			var buscar = $("#buscar").val();
 
+			$.ajax({
+				type: "post",
+				url: "buscar.php",
+				data: {
+					busqueda: buscar
+				},
+				success: function(respuesta){
+					$("#resultados").html(respuesta);
+				}
+			})
+
+		})
+	})
+</script>
   <script>
     $('#upd-pin').on('click', function() {
 
       nombres = $('#nombres').val();
       apellidos = $('#apellidos').val();
       especialidad = $('#especialidad').val();
-      horas = $('#horas').val();
+      // horas = $('#horas').val();
       telefono = $('#telefono').val();
       dni = $('#dni').val();
 
@@ -383,10 +415,7 @@ $registro = $servidor->query("SELECT * FROM profesor");
         document.getElementById('cont1').innerHTML='Falta especialidad';
         return false;
       }
-      if(horas == '' ){
-        document.getElementById('cont1').innerHTML='Falta horas';
-        return false;
-      }
+     
       if(telefono == '' ){
         document.getElementById('cont1').innerHTML='Falta telefono';
         return false;
@@ -405,7 +434,6 @@ $registro = $servidor->query("SELECT * FROM profesor");
           nombres: nombres,
           apellidos: apellidos,
           especialidad: especialidad,
-          horas:horas,
           telefono: telefono,
           dni: dni
         },

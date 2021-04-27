@@ -20,7 +20,7 @@ require_once('conexion.php');
         $nombres2 = $_POST['nombres2'];
         $apellidos2 = $_POST['apellidos2'];
         $especialidad2 = $_POST['especialidad2'];
-        $horas2 = $_POST['horas2'];
+        // $horas2 = $_POST['horas2'];
         $telefono2 = $_POST['telefono2'];
         $dni2 = $_POST['dni2'];
         $id_pro2 = $_POST['id_pro2'];
@@ -29,7 +29,6 @@ require_once('conexion.php');
             SET `nombres` = '$nombres2', 
             `apellidos` = '$apellidos2', 
             `especialidad` = '$especialidad2', 
-            `horas` = '$horas2', 
             `telefono` = '$telefono2', 
             `dni` = '$dni2'
              WHERE `profesor`.`id_pro` = '$id_pro2';");
