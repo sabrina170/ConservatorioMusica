@@ -267,7 +267,7 @@ $hoy = date("Y-m-d");
                 foreach ($registro as $show) {
                 ?>
 
-                  <div class="col-xl-6 col-md-6">
+                  
 
                     <div class="card card-stats">
                       <!-- Card body -->
@@ -330,7 +330,7 @@ $hoy = date("Y-m-d");
                         </p>
                       </div>
                     </div>
-                  </div>
+                  
                   <?php include('modals/ModalEditar.php') ?>
                   <?php include('modals/ModalEliminar.php') ?>
                 <?php } ?>

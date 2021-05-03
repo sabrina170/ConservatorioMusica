@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
 
-    <form method="post" action="recEditarA.php">
+    <form method="post" action="recEditarU.php">
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
@@ -31,13 +31,13 @@
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" class="form-control" name="usuario" id="usuario" value="<?php echo $show['usuario']?>" required />
-                    <label class="form-label" for="form3Example1">Curso</label>
+                    <input type="text" class="form-control" name="usuario2" id="usuario" value="<?php echo $show['usuario']?>" required />
+                    <label class="form-label" for="form3Example1">Usuario</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input type="number" class="form-control" name="clave2" id="clave2" value="<?php echo $show['clave']?>" required />
+                    <input type="text" class="form-control" name="clave2" id="clave2" value="<?php echo $show['clave']?>" required />
                     <label class="form-label" for="form3Example2">Contraseña</label>
                   </div>
                 </div>
