@@ -207,13 +207,13 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
                 <div class="col">
                   <div class="form-outline">
                     <input type="number" class="form-control" name="hora" id="hora" value="" required />
-                    <div class="form-helper">Horas</div>
+                    <label class="form-label" for="form3Example2">Horas</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
                     <input type="number" class="form-control" name="minuto" id="minuto" value="" required />
-                    <div class="form-helper">Minutos</div>
+                    <label class="form-label" for="form3Example2">Minutos</label>
                   </div>
                 </div>
               </div>

@@ -52,15 +52,15 @@
 
   <section class="view">
       <div class="mask rgba-gradient">
-      <!-- <img
-    src="img/logo.png"
-    class="img-fluid"
-    height="30px"
-  /> -->
+      
         <div class="container h-100 d-flex justify-content-center align-items-center">
   
          
         <div  class="card" style="padding: 50px;">
+        <img
+    src="img/violinista.png"
+    class="img-fluid"
+  />
       
   <div class="card-body" style="text-align: center;">
   

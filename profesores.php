@@ -38,6 +38,7 @@ $hoy = date("Y-m-d");
 <style>
 
 </style>
+
 <body>
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical 
@@ -52,18 +53,18 @@ $hoy = date("Y-m-d");
       <!-- Brand -->
       <div class="sidenav-header ">
         <br><br>
-      <ul class="navbar-nav align-items-center  ml-md-auto ">
-      <li class="nav-item d-xl-none">
-              <!-- Sidenav toggler -->
-              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
-                <div class="sidenav-toggler-inner">
-                  <i class="fas fa-times-circle fa-2x text-white"></i>
-                </div>
+        <ul class="navbar-nav align-items-center  ml-md-auto ">
+          <li class="nav-item d-xl-none">
+            <!-- Sidenav toggler -->
+            <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+              <div class="sidenav-toggler-inner">
+                <i class="fas fa-times-circle fa-2x text-white"></i>
               </div>
-            </li>
-      </ul>
+            </div>
+          </li>
+        </ul>
       </div>
-        <br>
+      <br>
       <div class="navbar-inner">
         <img src="img/logo2.jpg" class="img-fluid rounded-pill" alt="" />
         <!-- Collapse -->
@@ -83,7 +84,7 @@ $hoy = date("Y-m-d");
               </a>
             </li>
             <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
-            <i class="fas fa-sign-out-alt"></i>  Salir
+              <i class="fas fa-sign-out-alt"></i> Salir
             </a>
           </ul>
 
@@ -98,7 +99,7 @@ $hoy = date("Y-m-d");
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom"  style="
+    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom" style="
             background-image: linear-gradient(rgba(34, 74, 115, 0.8),
             rgba(34, 74, 115, 0.8) ), url(img/fondo2.jpg);
           background-position: center center;
@@ -115,7 +116,7 @@ $hoy = date("Y-m-d");
                   <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
                 <input class="form-control" placeholder="Search" type="text" id="buscar">
-              
+
               </div>
             </div>
             <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
@@ -141,7 +142,7 @@ $hoy = date("Y-m-d");
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
-              <i class="fas fa-sign-out-alt"></i>  Salir
+                <i class="fas fa-sign-out-alt"></i> Salir
               </a>
             </li>
           </ul>
@@ -165,27 +166,27 @@ $hoy = date("Y-m-d");
             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-        
+
             <form method="get">
-            <div class="text-center">
-            <span class="badge rounded-pill text-center" style="background-color: #fed6dd;color:#af152e;" id="cont1"></span>
-            </div>
-            <br>
+              <div class="text-center">
+                <span class="badge rounded-pill text-center" style="background-color: #fed6dd;color:#af152e;" id="cont1"></span>
+              </div>
+              <br>
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
-              
+
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" class="form-control" name="nombres" id="nombres" value="" required/>
+                    <input type="text" class="form-control" name="nombres" id="nombres" value="" required />
                     <label class="form-label" for="form3Example1">Nombres</label>
-                    
+
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
                     <input type="text" class="form-control" name="apellidos" id="apellidos" value="" required />
                     <label class="form-label" for="form3Example2">Apellidos</label>
-                    
+
                   </div>
                 </div>
               </div>
@@ -196,10 +197,10 @@ $hoy = date("Y-m-d");
                   <div class="form-outline">
                     <input type="text" class="form-control" name="especialidad" id="especialidad" value="" required />
                     <label class="form-label" for="form3Example1">Especialidad</label>
-                    
+
                   </div>
                 </div>
-                
+
               </div>
 
               <div class="row mb-4">
@@ -207,14 +208,14 @@ $hoy = date("Y-m-d");
                   <div class="form-outline">
                     <input type="number" class="form-control" name="telefono" id="telefono" value="" required />
                     <label class="form-label" for="form3Example1">Telefono</label>
-                    
+
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
                     <input type="number" class="form-control" name="dni" id="dni" value="" maxlength="8" required />
                     <label class="form-label" for="form3Example2">Dni</label>
-                    
+
                   </div>
                 </div>
               </div>
@@ -241,7 +242,7 @@ $hoy = date("Y-m-d");
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
               <h6 class="h1  d-inline-block mb-0" style="color: #224a73;">PROFESORES</h6>
-              
+
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <!-- <ol class="breadcrumb breadcrumb-links breadcrumb-dark"> 
                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> </a></li> 
@@ -255,86 +256,63 @@ $hoy = date("Y-m-d");
               <!-- <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
             </div>
           </div>
-          
+
           <br><br>
           <!-- Card stats -->
           <div class="row">
-         
-          <div id="resultados">
-            <?php 
-            $registro = $servidor->query("SELECT * FROM profesor");
-            $posicion = 1;
-                foreach ($registro as $show) {
-                ?>
 
-                  
+            <div id="resultados">
+              <?php
+              $registro = $servidor->query("SELECT * FROM profesor");
+              $posicion = 1;
+              foreach ($registro as $show) {
+              ?>
 
-                    <div class="card card-stats">
-                      <!-- Card body -->
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <h5 class="card-title text-uppercase text-muted mb-0"><?php echo $show['especialidad'] ?></h5>
-                            <span class="h2 font-weight-bold mb-0"><?php echo $show['nombres'] ?></span>
-                            <span class="h2 font-weight-bold mb-0"><?php echo $show['apellidos'] ?></span>
+                <div class="card card-stats">
+                  <!-- Card body -->
+                  <div class="card-body">
 
-                          </div>
-                          <div class="col-auto">
-                            <div class="icon icon-shape bg-gradient-dark text-white rounded-circle shadow">
+                    <div class="row">
 
-                              <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id_pro'] ?>"><i class="fas fa-pen"></i></a>
-                            </div>
-                            <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                      <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-0"><?php echo $show['especialidad'] ?></h5>
+                        <span class="h2 font-weight-bold mb-0"><?php echo $show['nombres'] ?></span>
+                        <span class="h2 font-weight-bold mb-0"><?php echo $show['apellidos'] ?></span>
 
-                              <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id_pro'] ?>"> <i class="fas fa-trash-alt"></i></a>
-
-                            </div>
-
-                          </div>
-                        </div>
-                        <span class="h5 text-nowrap"><i class="fas fa-phone-volume"></i> <?php echo $show['telefono'] ?></span>
-                        <br>
-
-                        <span class="h5 text-nowrap"><i class="fas fa-user-shield"></i> <?php echo $show['dni'] ?></span>
-                        <br>
-                        <?php
-                          $pro =  $show['id_pro'];
-                          $registro2 = $servidor->query("SELECT * FROM alumno where profesor = '$pro';");
-                          $alumnos = $registro2->fetch_assoc();
-                          
-                          foreach ($registro2 as $alumnos){
-                          
-                            // $horas = $horas + $alumnos['hora'] ;
-                            // $minutos = $minutos + $alumnos['minuto'];
-                            
-                          }
-
-                            ?>
-                        <!-- <span class="h5 text-nowrap"><i class="far fa-clock"></i>  <?php echo $horas;?> hrs.  <?php echo $minutos;?> min. </span> -->
-
-                        <p class="mt-3 mb-0 text-sm">
-                          
-                          
-                          <?php
-                          $pro =  $show['id_pro'];
-                          $registro3 = $servidor->query("SELECT COUNT(*) total FROM alumno where profesor = '$pro';");
-                          $alumnos = $registro3->fetch_assoc();
-                            
-                            ?>
-                          <span class="text-success mr-2 "><i class="fa fa-arrow-up fs-2x"></i> <strong><?php echo $alumnos['total'] ;?></strong></span>
-
-                          <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
-                          <strong> <i class="fas fa-user-friends"></i>
-                            <a class="h4 text-dark" href="alumnos.php?id_pro=<?php echo $show['id_pro']; ?>">Ver alumnos</a></strong>
-
-                        </p>
                       </div>
+                      <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-dark text-white rounded-circle shadow">
+
+                          <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id_pro'] ?>"><i class="fas fa-pen"></i></a>
+                        </div>
+                        <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+
+                          <a href="" style="color: white;" data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id_pro'] ?>"> <i class="fas fa-trash-alt"></i></a>
+
+                        </div>
+
+                      </div>
+
                     </div>
-                  
-                  <?php include('modals/ModalEditar.php') ?>
-                  <?php include('modals/ModalEliminar.php') ?>
-                <?php } ?>
-          </div>
+                    <span class="h5 text-nowrap"><i class="fas fa-phone-volume"></i> <?php echo $show['telefono'] ?></span>
+                    <br>
+
+                    <span class="h5 text-nowrap"><i class="fas fa-user-shield"></i> <?php echo $show['dni'] ?></span>
+                    <br>
+                    <p class="mt-3 mb-0 text-sm">
+
+                      <!-- <i class="fas fa-user-friends"></i> <a class="h4 text-primary" href="sd">Ver Alumnos</a> -->
+                      <strong> <i class="fas fa-user-friends"></i>
+                        <a href="meses.php?id_pro=<?php echo $show['id_pro']; ?>">Ver meses</a>
+                        <!-- <a class="h4 text-dark">Ver alumnos</a></strong> -->
+
+                    </p>
+                  </div>
+                </div>
+                <?php include('modals/ModalEditar.php') ?>
+                <?php include('modals/ModalEliminar.php') ?>
+              <?php } ?>
+            </div>
           </div>
         </div>
       </div>
@@ -374,24 +352,24 @@ $hoy = date("Y-m-d");
   <script type="text/javascript" src="js/mdb.min.js"></script>
 
   <script>
-	$(function(){
-		$("#buscar").on("keyup", function(){
-			var buscar = $("#buscar").val();
+    $(function() {
+      $("#buscar").on("keyup", function() {
+        var buscar = $("#buscar").val();
 
-			$.ajax({
-				type: "post",
-				url: "buscar.php",
-				data: {
-					busqueda: buscar
-				},
-				success: function(respuesta){
-					$("#resultados").html(respuesta);
-				}
-			})
+        $.ajax({
+          type: "post",
+          url: "buscar.php",
+          data: {
+            busqueda: buscar
+          },
+          success: function(respuesta) {
+            $("#resultados").html(respuesta);
+          }
+        })
 
-		})
-	})
-</script>
+      })
+    })
+  </script>
   <script>
     $('#upd-pin').on('click', function() {
 
@@ -402,66 +380,64 @@ $hoy = date("Y-m-d");
       telefono = $('#telefono').val();
       dni = $('#dni').val();
 
-      if(nombres == '' ){
-        document.getElementById('cont1').innerHTML='Falta nombres ';
+      if (nombres == '') {
+        document.getElementById('cont1').innerHTML = 'Falta nombres ';
         return false;
       }
-      if(apellidos == ''  ){
-        document.getElementById('cont1').innerHTML='Falta apellidos';
-        return false;
-      }
-      
-      if(especialidad == '' ){
-        document.getElementById('cont1').innerHTML='Falta especialidad';
-        return false;
-      }
-     
-      if(telefono == '' ){
-        document.getElementById('cont1').innerHTML='Falta telefono';
-        return false;
-      }
-      if(dni == '' ){
-        document.getElementById('cont1').innerHTML='Falta dni';
+      if (apellidos == '') {
+        document.getElementById('cont1').innerHTML = 'Falta apellidos';
         return false;
       }
 
-      else{
-  $.ajax({
-        method: 'POST',
-        url: 'acciones.php',
-        data: {
-          accion: "RegistrarProfesor",
-          nombres: nombres,
-          apellidos: apellidos,
-          especialidad: especialidad,
-          telefono: telefono,
-          dni: dni
-        },
-        success: function(data) {
-          console.log(data);
-          if (data == 1) {
-            Swal.fire({
-              type: 'success',
-              title: 'Profesor Registrado',
-              timer: 1200,
-              showConfirmButton: false
-            }).then(function() {
-              location.href = "profesores.php";
-            });
-          } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'No se pudo registrar',
-              text: data
-            }).then(function() {
+      if (especialidad == '') {
+        document.getElementById('cont1').innerHTML = 'Falta especialidad';
+        return false;
+      }
 
-            });
+      if (telefono == '') {
+        document.getElementById('cont1').innerHTML = 'Falta telefono';
+        return false;
+      }
+      if (dni == '') {
+        document.getElementById('cont1').innerHTML = 'Falta dni';
+        return false;
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: 'acciones.php',
+          data: {
+            accion: "RegistrarProfesor",
+            nombres: nombres,
+            apellidos: apellidos,
+            especialidad: especialidad,
+            telefono: telefono,
+            dni: dni
+          },
+          success: function(data) {
+            console.log(data);
+            if (data == 1) {
+              Swal.fire({
+                type: 'success',
+                title: 'Profesor Registrado',
+                timer: 1200,
+                showConfirmButton: false
+              }).then(function() {
+                location.href = "profesores.php";
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'No se pudo registrar',
+                text: data
+              }).then(function() {
+
+              });
+            }
           }
-        }
-      })
+        })
 
 
-}
+      }
 
     });
   </script>
