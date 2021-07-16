@@ -2,7 +2,7 @@
 
 require_once('conexion.php');
 
-$accion = $_POST['accion'];
+$accion = $_REQUEST['accion'];
 
 switch ($accion) {
 
@@ -101,7 +101,7 @@ switch ($accion) {
         if (!$accion) {
             echo $cn->error;
         } else {
-            echo 1;
+            header('location:cursos.php?id_pro=' . $id_pro . '&id_mes=' . $id_mes . '');
         }
 
         break;

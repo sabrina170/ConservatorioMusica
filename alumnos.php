@@ -51,20 +51,20 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
       <!-- Brand -->
       <div class="sidenav-header ">
         <br><br>
-      <ul class="navbar-nav align-items-center  ml-md-auto ">
-      <li class="nav-item d-xl-none">
-              <!-- Sidenav toggler -->
-              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
-                <div class="sidenav-toggler-inner">
-                  <i class="fas fa-times-circle fa-2x text-white"></i>
-                </div>
+        <ul class="navbar-nav align-items-center  ml-md-auto ">
+          <li class="nav-item d-xl-none">
+            <!-- Sidenav toggler -->
+            <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+              <div class="sidenav-toggler-inner">
+                <i class="fas fa-times-circle fa-2x text-white"></i>
               </div>
-            </li>
-      </ul>
+            </div>
+          </li>
+        </ul>
       </div>
-        <br>
+      <br>
       <div class="navbar-inner">
-      
+
         <img src="img/logo2.jpg" class="img-fluid rounded-pill" alt="" />
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
@@ -83,7 +83,7 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
               </a>
             </li>
             <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
-            <i class="fas fa-sign-out-alt"></i>  Salir
+              <i class="fas fa-sign-out-alt"></i> Salir
             </a>
           </ul>
 
@@ -97,7 +97,7 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
 
   <!-- Main content -->
   <div class="main-content" id="panel">
-  <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom"  style="
+    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom" style="
             background-image: linear-gradient(rgba(34, 74, 115, 0.8),
             rgba(34, 74, 115, 0.8) ), url(img/fondo2.jpg);
           background-position: center center;
@@ -139,7 +139,7 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
-              <i class="fas fa-sign-out-alt"></i>  Salir
+                <i class="fas fa-sign-out-alt"></i> Salir
               </a>
             </li>
           </ul>
@@ -164,10 +164,10 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
           <div class="modal-body">
 
             <form method="get">
-            <div class="text-center">
-            <span class="badge rounded-pill text-center" style="background-color: #fed6dd;color:#af152e;" id="cont1"></span>
-            </div>
-            <br>
+              <div class="text-center">
+                <span class="badge rounded-pill text-center" style="background-color: #fed6dd;color:#af152e;" id="cont1"></span>
+              </div>
+              <br>
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
                 <div class="col">
@@ -287,7 +287,7 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
             </div>
             <!-- Light table -->
             <div class="table-responsive">
-              <table id="usuarios" >
+              <table id="usuarios">
                 <thead class="thead-light">
                   <tr>
                     <th scope="col" class="sort" data-sort="name">Nr0</th>
@@ -303,45 +303,45 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
-                <tbody >
+                <tbody>
                   <?php $posicion = 1;
                   foreach ($registro as $show) {
                   ?>
                     <tr>
-                      <th >
+                      <th>
                         <?php echo $posicion;
                         $posicion++ ?>
                       </th>
-                      <td >
+                      <td>
                         <?php echo $show['nombres'] ?>
                       </td>
-                      <td >
+                      <td>
                         <?php echo $show['apellidos'] ?>
                       </td>
-                      <td >
+                      <td>
                         <?php echo $show['especialidad'] ?>
                       </td>
-                      <td >
+                      <td>
                         <?php echo $show['curso'] ?>
                       </td>
-                      <td >
+                      <td>
                         <?php echo $show['edad'] ?>
                       </td>
-                      <td >
+                      <td>
                         <?php echo $show['hora'] ?> hrs.
                       </td>
-                      <td >
+                      <td>
                         <?php echo $show['minuto'] ?> mins.
                       </td>
-                      <td >
+                      <td>
                         <?php echo $show['fecha_inicio'] ?>
                       </td>
-                      <td >
+                      <td>
                         <?php echo $show['fecha_fin'] ?>
                       </td>
-                      <td >
-                       <a href=""  data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id_alum'] ?>"> <i class="fas fa-edit"></i></a>
-                       <a href=""  data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id_alum'] ?>"><i class="fas fa-trash-alt"></i></a>
+                      <td>
+                        <a href="" data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id_alum'] ?>"> <i class="fas fa-edit"></i></a>
+                        <a href="" data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id_alum'] ?>"><i class="fas fa-trash-alt"></i></a>
                       </td>
 
                     </tr>
@@ -407,91 +407,90 @@ $registro = $servidor->query("SELECT * FROM alumno where profesor = '$id_pro' ")
       obsevaciones = $('#obsevaciones').val();
       profesor = $('#profesor').val();
 
-      if(nombres == '' ){
-        document.getElementById('cont1').innerHTML='Falta nombres ';
+      if (nombres == '') {
+        document.getElementById('cont1').innerHTML = 'Falta nombres ';
         return false;
       }
-      if(apellidos == ''  ){
-        document.getElementById('cont1').innerHTML='Falta apellidos';
+      if (apellidos == '') {
+        document.getElementById('cont1').innerHTML = 'Falta apellidos';
         return false;
       }
-      
-      if(especialidad == '' ){
-        document.getElementById('cont1').innerHTML='Falta especialidad';
-        return false;
-      }
-      if(curso == '' ){
-        document.getElementById('cont1').innerHTML='Falta curso';
-        return false;
-      }
-      if(edad == '' ){
-        document.getElementById('cont1').innerHTML='Falta edad';
-        return false;
-      }
-      if(hora == '' ){
-        document.getElementById('cont1').innerHTML='Faltan horas';
-        return false;
-      }
-      if(minuto == '' ){
-        document.getElementById('cont1').innerHTML='Faltan minutos';
-        return false;
-      }
-      if(minuto >= 60 ){
-        document.getElementById('cont1').innerHTML='Los minutos deben ser menores a 60';
-        return false;
-      }
-      
-      if(fecha_inicio == '' ){
-        document.getElementById('cont1').innerHTML='Falta fecha de inicio';
-        return false;
-      }
-      if(fecha_fin == '' ){
-        document.getElementById('cont1').innerHTML='Falta fecha de fin';
-        return false;
-      }
-      else{
-      $.ajax({
-        method: 'POST',
-        url: 'acciones.php',
-        data: {
-          accion: "RegistrarAlumno",
-          nombres: nombres,
-          apellidos: apellidos,
-          especialidad: especialidad,
-          curso: curso,
-          edad: edad,
-          hora:hora,
-          minuto:minuto,
-          fecha_inicio: fecha_inicio,
-          fecha_fin: fecha_fin,
-          obsevaciones: obsevaciones,
-          profesor: profesor
-        },
 
-        success: function(data) {
-          console.log(data);
-          if (data == 1) {
-            Swal.fire({
-              type: 'success',
-              title: 'Alumno registrado',
-              timer: 1200,
-              showConfirmButton: false
-            }).then(function() {
-              location.href = "alumnos.php?id_pro=<?php echo $id_pro; ?>";
-            });
-          } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'No se pudo registrar',
-              text: data
-            }).then(function() {
+      if (especialidad == '') {
+        document.getElementById('cont1').innerHTML = 'Falta especialidad';
+        return false;
+      }
+      if (curso == '') {
+        document.getElementById('cont1').innerHTML = 'Falta curso';
+        return false;
+      }
+      if (edad == '') {
+        document.getElementById('cont1').innerHTML = 'Falta edad';
+        return false;
+      }
+      if (hora == '') {
+        document.getElementById('cont1').innerHTML = 'Faltan horas';
+        return false;
+      }
+      if (minuto == '') {
+        document.getElementById('cont1').innerHTML = 'Faltan minutos';
+        return false;
+      }
+      if (minuto >= 60) {
+        document.getElementById('cont1').innerHTML = 'Los minutos deben ser menores a 60';
+        return false;
+      }
 
-            });
+      if (fecha_inicio == '') {
+        document.getElementById('cont1').innerHTML = 'Falta fecha de inicio';
+        return false;
+      }
+      if (fecha_fin == '') {
+        document.getElementById('cont1').innerHTML = 'Falta fecha de fin';
+        return false;
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: 'acciones.php',
+          data: {
+            accion: "RegistrarAlumno",
+            nombres: nombres,
+            apellidos: apellidos,
+            especialidad: especialidad,
+            curso: curso,
+            edad: edad,
+            hora: hora,
+            minuto: minuto,
+            fecha_inicio: fecha_inicio,
+            fecha_fin: fecha_fin,
+            obsevaciones: obsevaciones,
+            profesor: profesor
+          },
+
+          success: function(data) {
+            console.log(data);
+            if (data == 1) {
+              Swal.fire({
+                type: 'success',
+                title: 'Alumno registrado',
+                timer: 1200,
+                showConfirmButton: false
+              }).then(function() {
+                location.href = "alumnos.php?id_pro=<?php echo $id_pro; ?>";
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'No se pudo registrar',
+                text: data
+              }).then(function() {
+
+              });
+            }
           }
-        }
-      })
+        })
 
-    }
+      }
 
     });
   </script>

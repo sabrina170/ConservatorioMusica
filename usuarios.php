@@ -30,15 +30,12 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Conservatorio de Musica de Lima</title>
-    <link rel="icon" href="img/logo2.jpg" type="image/x-icon" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-    />
-    <link rel="stylesheet" href="css/mdb.min.css" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Conservatorio de Musica de Lima</title>
+  <link rel="icon" href="img/logo2.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="css/mdb.min.css" />
   <!-- Favicon -->
   <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
   <!-- Fonts -->
@@ -66,20 +63,20 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
       <!-- Brand -->
       <div class="sidenav-header ">
         <br><br>
-      <ul class="navbar-nav align-items-center  ml-md-auto ">
-      <li class="nav-item d-xl-none">
-              <!-- Sidenav toggler -->
-              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
-                <div class="sidenav-toggler-inner">
-                  <i class="fas fa-times-circle fa-2x text-white"></i>
-                </div>
+        <ul class="navbar-nav align-items-center  ml-md-auto ">
+          <li class="nav-item d-xl-none">
+            <!-- Sidenav toggler -->
+            <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+              <div class="sidenav-toggler-inner">
+                <i class="fas fa-times-circle fa-2x text-white"></i>
               </div>
-            </li>
-      </ul>
+            </div>
+          </li>
+        </ul>
       </div>
-        <br>
+      <br>
       <div class="navbar-inner">
-      
+
         <img src="img/logo2.jpg" class="img-fluid rounded-pill" alt="" />
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
@@ -94,11 +91,11 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
             <li class="nav-item">
               <a class="nav-link active" href="usuarios.php">
                 <i class="fas fa-users" text-dark></i>
-                <span class=" nav-link-text " >Usuarios</span>
+                <span class=" nav-link-text ">Usuarios</span>
               </a>
             </li>
             <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
-            <i class="fas fa-sign-out-alt"></i> Salir
+              <i class="fas fa-sign-out-alt"></i> Salir
             </a>
           </ul>
 
@@ -110,9 +107,9 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
     </div>
   </nav>
 
-<div class="main-content" id="panel">
+  <div class="main-content" id="panel">
     <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom"  style="
+    <nav class="navbar navbar-top navbar-expand navbar-dark  border-bottom" style="
             background-image: linear-gradient(rgba(34, 74, 115, 0.8),
             rgba(34, 74, 115, 0.8) ), url(img/fondo2.jpg);
           background-position: center center;
@@ -154,7 +151,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="cerrar_sesion.php" style="color: white;">
-              <i class="fas fa-sign-out-alt"></i>  Salir
+                <i class="fas fa-sign-out-alt"></i> Salir
               </a>
             </li>
           </ul>
@@ -164,20 +161,20 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
     </nav>
     <!-- Header -->
     <!-- Header -->
-    <div class="header pb-6 d-flex align-items-center" >
+    <div class="header pb-6 d-flex align-items-center">
       <!-- Mask -->
       <span class="mask bg-gradient-default opacity-8"></span>
       <!-- Header container -->
-      
+
     </div>
     <!-- Page content -->
     <div class="container-fluid mt--6">
       <div class="row">
         <div class="col-xl-4 order-xl-2">
           <div class="card card-profile">
-         <div class="row justify-content-center">
+            <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
-                
+
               </div>
             </div>
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
@@ -191,15 +188,15 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                 <div class="col">
                   <div class="card-profile-stats d-flex justify-content-center">
                     <div>
-                      <span class="heading"><?php echo $usuarios['total'] ;?></span>
+                      <span class="heading"><?php echo $usuarios['total']; ?></span>
                       <span class="description">Usuarios</span>
                     </div>
                     <div>
-                      <span class="heading"><?php echo $profesores['total'] ;?></span>
+                      <span class="heading"><?php echo $profesores['total']; ?></span>
                       <span class="description">Profesores</span>
                     </div>
                     <div>
-                      <span class="heading"><?php echo $alumnos['total'] ;?></span>
+                      <span class="heading"><?php echo $alumnos['total']; ?></span>
                       <span class="description">Alumnos</span>
                     </div>
                   </div>
@@ -207,13 +204,13 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
               </div>
               <div class="text-center">
                 <h5 class="h3">
-                  <?php echo $user_name ; ?>
+                  <?php echo $user_name; ?>
                 </h5>
                 <div class="h5 font-weight-300">
                   <i class="ni location_pin mr-2"></i>Lima, Perú
                 </div>
                 <div class="h5 mt-4">
-                  <i class="ni business_briefcase-24 mr-2"></i>Usuario :  <?php echo $usuario?>
+                  <i class="ni business_briefcase-24 mr-2"></i>Usuario : <?php echo $usuario ?>
                 </div>
                 <div class="h5 mt-4">
                   <i class="ni business_briefcase-24 mr-2"></i>Contraseña : <?php echo $contraseña ?>
@@ -229,7 +226,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                 <div class="col-8">
                   <h3 class="mb-0">Crear nuevo usuario</h3>
                 </div>
-                
+
               </div>
             </div>
             <div class="card-body">
@@ -237,11 +234,11 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                 <h6 class="heading-small text-muted mb-4">Informacion Usuario</h6>
                 <div class="pl-lg-4">
                   <div class="row">
-                  <div class="text-center">
-            <span class="badge rounded-pill text-center" style="background-color: #fed6dd;color:#af152e;" id="cont1"></span>
-            </div>
-            <br>
-                  <div class="col-lg-4">
+                    <div class="text-center">
+                      <span class="badge rounded-pill text-center" style="background-color: #fed6dd;color:#af152e;" id="cont1"></span>
+                    </div>
+                    <br>
+                    <div class="col-lg-4">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Cargo</label>
                         <input type="text" id="cargo" name="cargo" class="form-control" placeholder="Contraseña">
@@ -259,7 +256,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                         <input type="text" id="clave" name="clave" class="form-control" placeholder="Contraseña">
                       </div>
                     </div>
-                    
+
                   </div>
                   <div class="row">
                     <div class="col-lg-6">
@@ -277,7 +274,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                   </div>
                 </div>
                 <input type="hidden" name="tipo" id="tipo" value="1">
-                <button href="#"  id="upd-pin"  class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
+                <button href="#" id="upd-pin" class="btn btn-block mb-4" style="background-color: #3578ba; color: white;">Agregar</button>
               </form>
             </div>
           </div>
@@ -292,10 +289,10 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
             </div>
             <!-- Light table -->
             <div class="table-responsive">
-              <table  id="usuarios" >
+              <table id="usuarios">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col"  data-sort="name">Nr0</th>
+                    <th scope="col" data-sort="name">Nr0</th>
                     <th scope="col" data-sort="budget">Nombres</th>
                     <th scope="col" data-sort="status">Apellidos</th>
                     <th scope="col">Cargo</th>
@@ -305,42 +302,44 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
                   </tr>
                 </thead>
                 <tbody>
-                <?php $posicion=1; foreach ($lista as $show){
-              ?> 
-                  <tr>
-                    <th >
-                    <?php echo $posicion; $posicion++?>
-                    </th>
-                    <td >
-                    <?php echo $show['nombres']?>
-                    </td>
-                    <td >
-                    <?php echo $show['apellidos']?>
-                    </td>
-                    <td >
-                    <?php echo $show['cargo']?>
-                    </td>
-                    <td >
-                    <?php echo $show['usuario']?>
-                    </td>
-                    <td >
-                    <?php echo $show['clave']?>
-                    </td>
-    
-                    <td>
-                    <a href=""  data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id'] ?>"> <i class="fas fa-edit"></i></a>
-                       <a href=""  data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id'] ?>"><i class="fas fa-trash-alt"></i></a>
-                    </td>
-                    
-                  </tr>
-                  <?php include('modals/ModalEditarU.php') ?>
-              <?php include('modals/ModalEliminarU.php') ?>
+                  <?php $posicion = 1;
+                  foreach ($lista as $show) {
+                  ?>
+                    <tr>
+                      <th>
+                        <?php echo $posicion;
+                        $posicion++ ?>
+                      </th>
+                      <td>
+                        <?php echo $show['nombres'] ?>
+                      </td>
+                      <td>
+                        <?php echo $show['apellidos'] ?>
+                      </td>
+                      <td>
+                        <?php echo $show['cargo'] ?>
+                      </td>
+                      <td>
+                        <?php echo $show['usuario'] ?>
+                      </td>
+                      <td>
+                        <?php echo $show['clave'] ?>
+                      </td>
 
-                  <?php }?>
+                      <td>
+                        <a href="" data-mdb-toggle="modal" data-mdb-target="#edit_modal<?php echo $show['id'] ?>"> <i class="fas fa-edit"></i></a>
+                        <a href="" data-mdb-toggle="modal" data-mdb-target="#eliminar_modal<?php echo $show['id'] ?>"><i class="fas fa-trash-alt"></i></a>
+                      </td>
+
+                    </tr>
+                    <?php include('modals/ModalEditarU.php') ?>
+                    <?php include('modals/ModalEliminarU.php') ?>
+
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -354,7 +353,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
               &copy; 2021 <a class="font-weight-bold ml-1" target="_blank">Convervatorio de música de Lima</a>
             </div>
           </div>
-          
+
         </div>
       </footer>
     </div>
@@ -364,9 +363,9 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-      
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
   <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/js-cookie/js.cookie.js"></script>
@@ -377,7 +376,7 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
   <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="assets/js/argon.js?v=1.2.0"></script>
-  
+
   <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
@@ -391,109 +390,107 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script type="text/javascript">
-      </script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
+  </script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
   <script>
-          $('#upd-pin').on('click', function() {
-  
-          nombres = $('#nombres').val();
-          apellidos = $('#apellidos').val();
-          usuario = $('#usuario').val();
-          clave = $('#clave').val();
-          tipo = $('#tipo').val();
-          cargo = $('#cargo').val();
-  
-          if(cargo == '' ){
-        document.getElementById('cont1').innerHTML='Falta cargo';
+    $('#upd-pin').on('click', function() {
+
+      nombres = $('#nombres').val();
+      apellidos = $('#apellidos').val();
+      usuario = $('#usuario').val();
+      clave = $('#clave').val();
+      tipo = $('#tipo').val();
+      cargo = $('#cargo').val();
+
+      if (cargo == '') {
+        document.getElementById('cont1').innerHTML = 'Falta cargo';
         return false;
       }
-      if(usuario == '' ){
-        document.getElementById('cont1').innerHTML='Falta usuario';
+      if (usuario == '') {
+        document.getElementById('cont1').innerHTML = 'Falta usuario';
         return false;
       }
-      if(clave == '' ){
-        document.getElementById('cont1').innerHTML='Falta contraseña';
+      if (clave == '') {
+        document.getElementById('cont1').innerHTML = 'Falta contraseña';
         return false;
       }
-          if(nombres == '' ){
-        document.getElementById('cont1').innerHTML='Falta nombres ';
+      if (nombres == '') {
+        document.getElementById('cont1').innerHTML = 'Falta nombres ';
         return false;
       }
-      if(apellidos == ''  ){
-        document.getElementById('cont1').innerHTML='Falta apellidos';
+      if (apellidos == '') {
+        document.getElementById('cont1').innerHTML = 'Falta apellidos';
         return false;
+      } else {
+
+        $.ajax({
+          method: 'POST',
+          url: 'acciones.php',
+          data: {
+            accion: "RegistrarUsuario",
+            nombres: nombres,
+            apellidos: apellidos,
+            usuario: usuario,
+            clave: clave,
+            cargo: cargo,
+            tipo: tipo
+          },
+          success: function(data) {
+            console.log(data);
+            if (data == 1) {
+              Swal.fire({
+                type: 'success',
+                title: 'Usuario Registrado',
+                timer: 1200,
+                showConfirmButton: false
+              }).then(function() {
+                location.href = "usuarios.php";
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'No se pudo registrar',
+                text: data
+              }).then(function() {
+
+              });
+            }
+          }
+        })
+
       }
-      
-      else{
-  
-          $.ajax({
-              method: 'POST',
-              url: 'acciones.php',
-              data: {
-              accion: "RegistrarUsuario",
-              nombres: nombres,
-              apellidos: apellidos,
-              usuario:usuario,
-              clave: clave,
-              cargo: cargo,
-              tipo:tipo
-              },
-              success: function(data) {
-              console.log(data);
-              if (data == 1) {
-                  Swal.fire({
-                  type: 'success',
-                  title: 'Usuario Registrado',
-                  timer: 1200,
-                  showConfirmButton: false
-                  }).then(function() {
-                      location.href ="usuarios.php";
-                  });
-              } else {
-                  Swal.fire({
-                  icon: 'error',
-                  title: 'No se pudo registrar',
-                  text: data
-                  }).then(function() {
-  
-                  });
-              }
-              }
-          })
-  
-        }
-  
-  });
-  
+
+    });
   </script>
   <script>
-  
+    $(document).ready(function() {
 
-  $(document).ready(function(){
-  
-    $('#usuarios').DataTable( {
-      "searching": true,
-            "lengthChange": true,
-            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todo"]],
-            dom: 'Blfrtip',
+      $('#usuarios').DataTable({
+        "searching": true,
+        "lengthChange": true,
+        "lengthMenu": [
+          [10, 25, 50, -1],
+          [10, 25, 50, "Todo"]
+        ],
+        dom: 'Blfrtip',
         buttons: [
-        //     {
-        //     extend: 'excelHtml5',
-        //     exportOptions: {
-  
-        //     }
-        //   },
-        //   {
-        //     extend: 'pdfHtml5',
-        //     orientation: 'landscape',
-        //     pageSize: 'LEGAL',
-        //     exportOptions: {
-  
-        //     }
-        //   },
-          
-        //   'print',
-       
+          //     {
+          //     extend: 'excelHtml5',
+          //     exportOptions: {
+
+          //     }
+          //   },
+          //   {
+          //     extend: 'pdfHtml5',
+          //     orientation: 'landscape',
+          //     pageSize: 'LEGAL',
+          //     exportOptions: {
+
+          //     }
+          //   },
+
+          //   'print',
+
         ],
         exportOptions: {
           modifier: {
@@ -504,13 +501,13 @@ $lista = $servidor->query("SELECT * FROM adminuser;");
             search: 'none' // 'none', 'applied', 'removed'
           }
         }
-          
-      } );
-  });
-  
+
+      });
+    });
   </script>
-  </body>
-  </html>
+</body>
+
+</html>
 </body>
 
 </html>
